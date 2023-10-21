@@ -13,7 +13,7 @@ module.exports = (sequelize) => {
       primaryKey: true
     },
     difficulty:{
-      type: DataTypes.INTEGER(1),
+      type: DataTypes.INTEGER,
       allowNull: false,
       validate:{
         min: 1,

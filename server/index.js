@@ -1,7 +1,6 @@
 const axios = require("axios");
 const server = require("./src/server");
 const { conn, Country } = require('./src/db.js');
-const responseApi = require('./src/controllers/getInfoApi');
 const PORT = 3001;
 
 
@@ -13,7 +12,8 @@ const startServer = async ()=>{
           console.log(`Servidor escuchando en el puerto ${PORT}`);
         });
 
-        const apiData = responseApi.data?.map( async element => {
+        const api = await axios('http://localhost:5000/countries')
+        const apiData = api.data?.map( async element => {
             await Country.findOrCreate({
                 where:{
                     id: element.cca3,

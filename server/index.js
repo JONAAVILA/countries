@@ -1,7 +1,7 @@
 
 const server = require("./src/server");
 const { conn } = require('./src/db.js');
-const startBdd = require('./src/services/servicesCountries');
+const { startBdd } = require('./src/services/servicesCountries');
 const PORT = 3001;
 
 

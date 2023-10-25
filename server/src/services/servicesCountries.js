@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Country } = require('../db.js');
+const { Country, Activity } = require('../db.js');
 
 
 
@@ -30,4 +30,26 @@ const startBdd = async ()=>{
     }
 }
 
-module.exports = startBdd;
+const getAllCountries = async ()=>{
+    try {
+       const allCountries = await Country.findAll({
+        attributes:['id','name','continents','population'],
+        include:{
+            model: Activity,
+            attributes:['name', 'difficulty', 'duration', 'season'],
+            through:{
+                model: CountryActivity,
+            }
+        }
+    }) 
+        return allCountries
+    } catch (error) {
+        return error = {error: error.message};
+    }
+    
+}
+
+module.exports = {
+    startBdd,
+    getAllCountries,
+};

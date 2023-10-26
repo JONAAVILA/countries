@@ -27,7 +27,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    subRegion:{
+    subregion:{
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -39,6 +39,6 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       allowNull: false
     }
-  });
+  }, {timestamps:false});
   
 };

@@ -1,4 +1,4 @@
-const { Country } = require('../db.js');
+const { Country } = require('../../db.js');
 
 const allCountries = async()=>{
     const listCountries = await Country.findAll();

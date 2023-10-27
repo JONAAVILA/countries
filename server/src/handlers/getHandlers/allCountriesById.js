@@ -1,9 +1,9 @@
-const { Country, Activity } = require('../db.js');
+const { Country, Activity } = require('../../db.js');
 
-const allCountriesById = async (id)=>{
+const allCountriesById = async (idPais)=>{
     const listCountriesById = await Country.findOne({
         where:{
-            id: id
+            id: idPais
         },
         include: {
                model: Activity,

@@ -2,11 +2,6 @@ const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
     sequelize.define( 'Activity', {
-    id:{
-      type: DataTypes.STRING(3),
-      primaryKey: true,
-      unique: true
-    },
     name:{
       type: DataTypes.STRING,
       allowNull: false,
@@ -28,6 +23,6 @@ module.exports = (sequelize) => {
       type: DataTypes.ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
       allowNull: false,
     }
-  })
+  }, {timestamps : false})
   
 }

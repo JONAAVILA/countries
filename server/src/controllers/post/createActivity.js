@@ -10,7 +10,7 @@ const postActivity = async (req,res)=>{
         } = req.body; 
         
         const resPostActvity = await createActivity(idPais,name,difficulty,duration,season);
-        return res.status(200).json(resPostActvity);
+        return res.status(200).json("resPostActvity");
     } catch (error) {
         return res.status(400).json({error:error.messsage});
     }

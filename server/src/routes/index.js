@@ -6,11 +6,11 @@ const postActivity = require('../controllers/post/createActivity.js');
 
 const router = Router();
 
-router.get("/countries", getCountries);
-router.get("/countries/name", getCountriesByName)
-router.get("/countries/:idPais", getCountryById);
+// router.get("/countries", getCountries);
+// router.get("/countries/name", getCountriesByName)
+// router.get("/countries/:idPais", getCountryById);
 
-router.post("/countries/:idPais", postActivity);
+router.post("/countries/activities", postActivity);
 
 
 module.exports = router;

@@ -6,7 +6,7 @@ const PORT = 3001;
 
 
 const startServer = async ()=>{
-    await conn.sync({ force: false });
+    await conn.sync({ force: true });
         console.log('Base de datos sincronizada.');
         server.listen(PORT, () => {
           console.log(`Servidor escuchando en el puerto ${PORT}`);

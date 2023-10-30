@@ -1,8 +1,9 @@
+import Card from "../../../../../rick-and-morty/Client/src/components/Card/Card";
 
 const Home = ()=>{
     return(
         <div>
-            <div></div>
+            <Card/>
         </div>
     )
 }

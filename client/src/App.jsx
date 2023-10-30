@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
-import Landing from './components/landing/Landing';
+import Landing from './view/landing/Landing';
 
 
 function App() {

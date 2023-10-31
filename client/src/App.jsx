@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 import Landing from './view/landing/Landing';
-import Home from '../../../rick-and-morty/Client/src/view/Home/Home';
+import Home from './view/home/Home';
 
 
 function App() {

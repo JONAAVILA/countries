@@ -4,33 +4,33 @@ import { allCountries } from '../../redux/Actions';
 
 export const PageHandlers = ()=>{
     const [ currentPage, setCurrentPage ] = useState(1);
+    const itemsPerPage = 10;
     const state = useSelector(state => state.countries)
-    let counter = currentPage 
-
     const dispatch = useDispatch();
 
     useEffect(()=>{
         dispatch(allCountries())
     }, [])
 
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+
     const nextHandler = (event)=>{
         if(event){
-            counter += 1
-            setCurrentPage(counter)
+            setCurrentPage(currentPage + 1)
         }
     }
 
     const prevHandler = (event)=>{
-        if(event && counter > 1){
-            counter -= 1
-            setCurrentPage(counter)
+        if(event && currentPage > 1){
+            setCurrentPage(currentPage - 1)
         }
     }
 
     return(
         
         <div>
-            {state.slice(counter, counter * 10).map(p =>{
+            {state.slice(startIndex, endIndex).map(p =>{
                 return(
                     <div key={p.id} >
                        <h1>{p.name}</h1>

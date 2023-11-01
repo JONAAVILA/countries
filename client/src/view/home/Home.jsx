@@ -7,7 +7,6 @@ const Home = ()=>{
         <div>
             <Nav/>
             <PageHandlers/>
-
         </div>
     )
 }

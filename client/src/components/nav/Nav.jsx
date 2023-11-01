@@ -3,7 +3,6 @@ import SearchBar from "../SearchBar";
 const Nav = ()=>{
     return(
         <div>
-          <SearchBar/>
             <select name="Orden" id="">
                 <option value={"A"}>Ascendente</option>
                 <option value={"D"}>Descendente</option>
@@ -14,7 +13,7 @@ const Nav = ()=>{
                 <option value="ASIA">Asia</option>
                 <option value="EUROPA">Europa</option>
             </select>
-            
+            <button onClick={<SearchBar/>} >Search</button>
         </div>
     )
 }

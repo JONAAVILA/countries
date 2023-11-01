@@ -11,7 +11,7 @@ const startBdd = async ()=>{
                 where:{
                     id: element.cca3,
                     name: element.name['common'],
-                    flag: element.flag,
+                    flags: element.flags['svg'],
                     continents: element.continents[0],
                     capital: element.capital !== undefined ? element.capital[0] : 'No esta definido Capital',
                     subregion: element.subregion !== undefined ? element.subregion : 'No esta definido Subregion',

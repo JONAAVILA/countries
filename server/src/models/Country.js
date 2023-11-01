@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
       primaryKey: true,
       unique: true
     },
-    flag:{
+    flags:{
       type: DataTypes.STRING,
       allowNull: true,
     },

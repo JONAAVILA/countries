@@ -1,16 +1,29 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { allaCountries } from "../../redux/Actions";
 
 const Card = ()=>{
 
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        
-    })
+        dispatch(allaCountries())
+    }, [dispatch])
 
+    const country = useSelector(state => state.countries)
+    
     return(
-        <div></div>
+        <div>
+            {country.map(p =>{
+                return(
+                    <div key={p.id} >
+                       <h1>{p.name}</h1>
+                       <img src={p.flags} />
+                       <h2>{p.continents}</h2>
+                    </div> 
+                )
+            })}
+        </div>
     )
 }
 

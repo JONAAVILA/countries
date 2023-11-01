@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { allaCountries } from "../../redux/Actions";
+import { allCountries } from "../../redux/Actions";
 
 const Card = ()=>{
 
     const dispatch = useDispatch();
 
     useEffect(()=>{
-        dispatch(allaCountries())
+        dispatch(allCountries())
     }, [dispatch])
 
     const country = useSelector(state => state.countries)

@@ -1,7 +1,7 @@
 import { ALL_COUNTRIES } from "./ActionsTypes"
 import axios from 'axios';
 
-export const allaCountries = ()=>{
+export const allCountries = ()=>{
     const URL = 'http://localhost:3001/countries';
     
     return async (dispatch)=>{

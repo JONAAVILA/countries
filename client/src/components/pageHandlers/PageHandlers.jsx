@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux";
 import { allCountries } from '../../redux/Actions';
+import { Detail } from '../../view/detail/Detail';
+import { Link } from "react-router-dom";
 
 export const PageHandlers = ()=>{
     const [ currentPage, setCurrentPage ] = useState(1);
@@ -32,7 +34,7 @@ export const PageHandlers = ()=>{
         <div>
             {state.slice(startIndex, endIndex).map(p =>{
                 return(
-                    <div key={p.id} >
+                    <div key={p.id} onClick={<Link to="/detail" ><Detail/></Link>} >
                        <h1>{p.name}</h1>
                        <img src={p.flags} />
                        <h2>{p.continents}</h2>

@@ -1,7 +1,6 @@
-import { allCountries } from "../../redux/Actions";
 
 const Detail = ()=>{
-    render(
+    return(
         <div>
             <h1>hola</h1>
         </div>

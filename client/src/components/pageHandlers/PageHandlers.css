@@ -1,0 +1,16 @@
+.page_conteiner{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.page_conteiner h1{
+    font-size: 2rem;
+}
+
+.page_card{
+    border-radius: 4px;
+    padding: 5px;
+    width: 320px;
+    height: 200px;
+    margin: 3px;
+}

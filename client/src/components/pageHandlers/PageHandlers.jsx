@@ -1,7 +1,7 @@
+import './PageHandlers.css';
 import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux";
 import { allCountries } from '../../redux/Actions';
-import Detail from '../../view/detail/Detail';
 import { Link } from "react-router-dom";
 
 export const PageHandlers = ()=>{
@@ -30,23 +30,28 @@ export const PageHandlers = ()=>{
     }
 
     return(
-        
         <div>
+            <div className='page_conteiner'>
             {state.slice(startIndex, endIndex).map(p =>{
                 return(
-                    <div key={p.id} >
+                    <div key={p.id} style={{ backgroundImage: `url(${p.flags})`,
+                                             backgroundSize: 'cover',
+                                             backgroundPosition: 'center',    
+                                        }} className='page_card'>
                     <Link to={'/detail'} >
                         <h1>{p.name}</h1>
                     </Link>
-                       
-                       <img src={p.flags} />
                        <h2>{p.continents}</h2>
                     </div> 
                 )
             })}
+            
+        </div>
+        <div>
             <button onClick={prevHandler} >Prev</button>
             <p>{currentPage}</p>
             <button onClick={nextHandler} >Next</button>
         </div>
+        </div>  
     )
 }

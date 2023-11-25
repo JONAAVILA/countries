@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux";
 import { allCountries } from '../../redux/Actions';
 import { Link } from "react-router-dom";
+import Nav from "../../components/nav/Nav";
 
 export const PageHandlers = ()=>{
     const [ currentPage, setCurrentPage ] = useState(1);
@@ -31,6 +32,9 @@ export const PageHandlers = ()=>{
 
     return(
         <div>
+            <div>
+                <Nav/>
+            </div>
             <div className='page_conteiner'>
             {state.slice(startIndex, endIndex).map(p =>{
                 return(
@@ -47,7 +51,7 @@ export const PageHandlers = ()=>{
             })}
             
         </div>
-        <div>
+        <div className='paginator_conteiner'>
             <button onClick={prevHandler} >Prev</button>
             <p>{currentPage}</p>
             <button onClick={nextHandler} >Next</button>

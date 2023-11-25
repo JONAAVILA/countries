@@ -1,8 +1,9 @@
 import SearchBar from "../SearchBar";
+import './Nav.css';
 
 const Nav = ()=>{
     return(
-        <div>
+        <div className="nav_conteiner">
             <select name="Orden" id="">
                 <option value={"A"}>Ascendente</option>
                 <option value={"D"}>Descendente</option>

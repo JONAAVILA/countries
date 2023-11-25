@@ -14,6 +14,7 @@ const Nav = ()=>{
                 <option value="ASIA">Asia</option>
                 <option value="EUROPA">Europa</option>
             </select>
+            <input type="text" />
             <button onClick={<SearchBar/>} >Search</button>
         </div>
     )

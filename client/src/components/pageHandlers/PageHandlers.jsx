@@ -42,7 +42,7 @@ export const PageHandlers = ()=>{
                                              backgroundSize: 'cover',
                                              backgroundPosition: 'center',    
                                         }} className='page_card'>
-                    <Link to={'/detail'} >
+                    <Link to={`/detail/${p.id}`} >
                         <h1>{p.name}</h1>
                     </Link>
                        <h2>{p.continents}</h2>

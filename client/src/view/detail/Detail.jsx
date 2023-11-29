@@ -10,12 +10,25 @@ const Detail = ()=>{
     const matchCountrie = countries.find(c => c.id === id)
 
     return(
-        <div  key={matchCountrie.id} style={{ backgroundImage: `url(${matchCountrie.flags})`,
+        <div>
+            <div  key={matchCountrie.id} style={{ backgroundImage: `url(${matchCountrie.flags})`,
                                              backgroundSize: 'cover',
                                              backgroundPosition: 'center',    
                                         }} className='page_card'>
-            <h1>{matchCountrie.name}</h1> 
+                
+            </div>
+            <div>
+                <h2>{matchCountrie.id}</h2>
+                <h1>{matchCountrie.name}</h1> 
+                <h2>{matchCountrie.continents}</h2>
+                <h2>{matchCountrie.capital}</h2>
+                <h2>{matchCountrie.subregion}</h2>
+                <h3>Area: {matchCountrie.area}</h3>                     
+                <h3>Population: {matchCountrie.population}</h3>                     
+                <h3>Activities: {matchCountrie.Activities}</h3>                     
+            </div>  
         </div>
+        
     )
 }
 export default Detail;

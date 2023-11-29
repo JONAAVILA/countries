@@ -1,27 +1,20 @@
-import { allCountries } from "../../redux/Actions";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import axios from "axios";
+import { allCountries } from "../../redux/Actions";
+import { useSelector } from "react-redux";
 
 const Detail = ()=>{
 
+    const countries = useSelector(state => state.countries)
     const { id } = useParams();
-    const [ countrie, setCountrie ] = useEffect({})
-
-    useEffect( async ()=>{
-        try {
-            const response = await axios(`http://localhost:3001/countries/${id}`)
-            if(!response.name) throw new Error('NO HAY RESPUESTA DEL SERVIDOR')
-            
-            return setCountrie(response)
-        } catch (error) {
-            return console.log({error:error.message})
-        }
-    }, [id] )
+    
+    const matchCountrie = countries.find(c => c.id === id)
 
     return(
-        <div>
-            <p>{countrie.name}</p>  
+        <div  key={matchCountrie.id} style={{ backgroundImage: `url(${matchCountrie.flags})`,
+                                             backgroundSize: 'cover',
+                                             backgroundPosition: 'center',    
+                                        }} className='page_card'>
+            <h1>{matchCountrie.name}</h1> 
         </div>
     )
 }

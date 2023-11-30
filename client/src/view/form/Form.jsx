@@ -1,9 +1,16 @@
+import { useState } from "react"
 import { useSelector } from "react-redux"
 
 
 const Form = ()=>{
 
     const countrie = useSelector(state => state.countries)
+    const [ addedCountries, setAddedCountries ] = useState({})
+
+    const addCountrie = (event)=>{
+        if(event.key === "Enter")
+        setAddedCountries([...addCountrie, c])
+    }
 
     return(
         <div>
@@ -23,8 +30,16 @@ const Form = ()=>{
                 <option value="Winter">Winter</option>
                 <option value="Spring">Spring</option>
             </select>
-            <input type="text" placeholder="Type a countrie and press Enter"/>
+            <input type="text" onKeyPress={addCountrie} placeholder="Type a countrie and press Enter"/>
             <button>Create</button>
+    
+            {addedCountries.map(c => {
+                return(
+                    <div>
+                      <h3>{c.name}</h3>  
+                    </div> 
+                )
+            })}
         </div>
     )
 }

@@ -5,11 +5,20 @@ import { useSelector } from "react-redux"
 const Form = ()=>{
 
     const countrie = useSelector(state => state.countries)
-    const [ addedCountries, setAddedCountries ] = useState({})
+    console.log(countrie)
+    const [ addedCountries, setAddedCountries ] = useState([])
 
     const addCountrie = (event)=>{
-        if(event.key === "Enter")
-        setAddedCountries([...addCountrie, c])
+        if(event.key === "Enter"){
+            const c = countrie.find(p => p.name === event.target.value)
+            if(c){
+                setAddedCountries([ ...addedCountries, c ])
+                event.target.value = ""
+                
+            }
+            console.log(addedCountries)
+        }
+        
     }
 
     return(
@@ -32,14 +41,16 @@ const Form = ()=>{
             </select>
             <input type="text" onKeyPress={addCountrie} placeholder="Type a countrie and press Enter"/>
             <button>Create</button>
-    
-            {addedCountries.map(c => {
+            <div>
+               {addedCountries.map(c => {
                 return(
                     <div>
                       <h3>{c.name}</h3>  
                     </div> 
                 )
-            })}
+            })} 
+            </div>
+            
         </div>
     )
 }

@@ -4,15 +4,22 @@ import { useSelector } from "react-redux"
 
 const Form = ()=>{
 
-    const countrie = useSelector(state => state.countries)
-    console.log(countrie)
+    const state = useSelector(state => state.countries)
+    console.log(state)
     const [ addedCountries, setAddedCountries ] = useState([])
+    const [ search, setSearch ] = useState("")
+
+    const handleInput = (event)=>{
+        if(event){
+            setSearch(event.target.value)
+        }
+    }
 
     const addCountrie = (event)=>{
         if(event.key === "Enter"){
-            const c = countrie.find(p => p.name === event.target.value)
-            if(c){
-                setAddedCountries([ ...addedCountries, c ])
+            const country = state.find(p => p.name === search)
+            if(country){
+                setAddedCountries([ ...addedCountries, country ])
                 event.target.value = ""
                 
             }
@@ -39,7 +46,7 @@ const Form = ()=>{
                 <option value="Winter">Winter</option>
                 <option value="Spring">Spring</option>
             </select>
-            <input type="text" onKeyPress={addCountrie} placeholder="Type a countrie and press Enter"/>
+            <input type="text" onKeyPress={addCountrie} onChange={handleInput} placeholder="Type a countrie and press Enter"/>
             <button>Create</button>
             <div>
                {addedCountries.map(c => {

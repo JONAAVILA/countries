@@ -10,19 +10,21 @@ const Form = ()=>{
 
     const handleInput = (event)=>{
         if(event){
-            setSearch(event.target.value)
+            const countrie = event.target.value
+            let aux = countrie[0].tuUpperCase()
+            setSearch(aux + countrie.slice(1))
         }
     }
 
     const addCountrie = (event)=>{
         if(event.key === "Enter"){
             const country = state.find(p => p.name === search)
+            
             if(country){
                 setAddedCountries([ ...addedCountries, country ])
                 event.target.value = ""
                 
             }
-            console.log(addedCountries)
         }
         
     }
@@ -47,7 +49,11 @@ const Form = ()=>{
             </select>
             <input type="text" onKeyPress={addCountrie} onChange={handleInput} placeholder="Type a countrie and press Enter"/>
             <button>Create</button>
-            <h1>{addedCountries}</h1>
+            {addedCountries.map(c => {
+                return(
+                    <h3 key={c.id} >{c.name}</h3>
+                )
+            })}
         </div>
     )
 }

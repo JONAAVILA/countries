@@ -3,9 +3,8 @@ import { useSelector } from "react-redux"
 
 
 const Form = ()=>{
-
+    
     const state = useSelector(state => state.countries)
-    console.log(state)
     const [ addedCountries, setAddedCountries ] = useState([])
     const [ search, setSearch ] = useState("")
 
@@ -48,16 +47,7 @@ const Form = ()=>{
             </select>
             <input type="text" onKeyPress={addCountrie} onChange={handleInput} placeholder="Type a countrie and press Enter"/>
             <button>Create</button>
-            <div>
-               {addedCountries.map(c => {
-                return(
-                    <div>
-                      <h3>{c.name}</h3>  
-                    </div> 
-                )
-            })} 
-            </div>
-            
+            <h1>{addedCountries}</h1>
         </div>
     )
 }

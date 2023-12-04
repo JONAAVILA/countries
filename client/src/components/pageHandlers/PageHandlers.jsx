@@ -1,7 +1,6 @@
 import './PageHandlers.css';
-import { useState, useEffect } from "react"
-import { useSelector, useDispatch } from "react-redux";
-import { allCountries } from '../../redux/Actions';
+import { useState } from "react"
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import Nav from "../../components/nav/Nav";
 
@@ -9,11 +8,6 @@ export const PageHandlers = ()=>{
     const [ currentPage, setCurrentPage ] = useState(1);
     const itemsPerPage = 10;
     const state = useSelector(state => state.countries)
-    const dispatch = useDispatch();
-
-    useEffect(()=>{
-        dispatch(allCountries())
-    }, [])
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;

@@ -11,7 +11,7 @@ const Form = ()=>{
     const handleInput = (event)=>{
         if(event){
             const countrie = event.target.value
-            let aux = countrie[0].tuUpperCase()
+            let aux = countrie[0].toUpperCase()
             setSearch(aux + countrie.slice(1))
         }
     }
@@ -19,14 +19,18 @@ const Form = ()=>{
     const addCountrie = (event)=>{
         if(event.key === "Enter"){
             const country = state.find(p => p.name === search)
-            
+            const matchCountry = addedCountries.find(c => c.name === search)
+
+            if(matchCountry){
+                       window.alert("The country has already been added")
+                return event.target.value = ""
+            } 
+
             if(country){
                 setAddedCountries([ ...addedCountries, country ])
-                event.target.value = ""
-                
+                event.target.value = "" 
             }
         }
-        
     }
 
     return(

@@ -41,7 +41,7 @@ const Form = ()=>{
         const { id, value } = event.target
         setInputValues(prevState => ({
             ...prevState,
-            [id] : value
+            [id] : value    
         }))
         console.log(inputValues)
     }

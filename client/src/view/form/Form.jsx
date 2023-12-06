@@ -7,6 +7,10 @@ const Form = ()=>{
     const state = useSelector(state => state.countries)
     const [ addedCountries, setAddedCountries ] = useState([])
     const [ search, setSearch ] = useState("")
+    const [ inputValues, setInputValues ] = useState({
+        inputName : "",
+        inputHours : "",
+    })
 
     const handleInput = (event)=>{
         if(event){
@@ -33,25 +37,52 @@ const Form = ()=>{
         }
     }
 
+    const handleActivity = (event)=>{
+        const { id, value } = event.target
+        setInputValues(prevState => ({
+            ...prevState,
+            [id] : value
+        }))
+        console.log(inputValues)
+    }
+
     return(
         <div>
             <h1>Create Activity</h1>
-            <input type="text" placeholder="Name"/>
-            <select name="Difficulty" id="">
+            <input  id="inputName"
+                    value={inputValues.inputName}
+                    onChange={handleActivity}
+                    type="text"
+                    placeholder="Name"
+                    required
+                    />
+            <select name="Difficulty" required >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <input type="number" name="" id="" placeholder="Enter the time in hours"/>
-            <select name="Season" id="">
+            <input  id="inputHours"
+                    value={inputValues.inputHours}
+                    onChange={handleActivity}
+                    type="number"
+                    placeholder="Enter the time in hours"
+                    required
+                    />
+            <select name="Season" id="" required >
                 <option value="Summer">Summer</option>
                 <option value="Autumn">Autumn</option>
                 <option value="Winter">Winter</option>
                 <option value="Spring">Spring</option>
             </select>
-            <input type="text" onKeyPress={addCountrie} onChange={handleInput} placeholder="Type a countrie and press Enter"/>
+            <input  id="inputCountry"
+                    type="text"
+                    onKeyPress={addCountrie}
+                    onChange={handleInput}
+                    placeholder="Type a countrie and press Enter"
+                    required
+                    />
             <button>Create</button>
             {addedCountries.map(c => {
                 return(

@@ -9,7 +9,9 @@ const Form = ()=>{
     const [ search, setSearch ] = useState("")
     const [ inputValues, setInputValues ] = useState({
         inputName : "",
+        selectDifficulty : "",
         inputHours : "",
+        selectSeason : ""
     })
 
     const handleInput = (event)=>{
@@ -43,20 +45,20 @@ const Form = ()=>{
             ...prevState,
             [id] : value    
         }))
-        console.log(inputValues)
+        
     }
-
+    console.log(inputValues)
     return(
         <div>
             <h1>Create Activity</h1>
             <input  id="inputName"
                     value={inputValues.inputName}
-                    onChange={handleActivity}
+                    onInput={handleActivity}
                     type="text"
                     placeholder="Name"
                     required
                     />
-            <select name="Difficulty" required >
+            <select id="selectDifficulty" onChange={handleActivity} name="Difficulty" required >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -70,7 +72,7 @@ const Form = ()=>{
                     placeholder="Enter the time in hours"
                     required
                     />
-            <select name="Season" id="" required >
+            <select id="selectSeason" onChange={handleActivity} name="Season" required >
                 <option value="Summer">Summer</option>
                 <option value="Autumn">Autumn</option>
                 <option value="Winter">Winter</option>

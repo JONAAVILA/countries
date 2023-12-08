@@ -48,6 +48,12 @@ const Form = ()=>{
         
     }
     console.log(inputValues)
+
+    const handleCreateActivity = (event)=>{
+
+    }
+
+
     return(
         <div>
             <h1>Create Activity</h1>
@@ -85,7 +91,7 @@ const Form = ()=>{
                     placeholder="Type a countrie and press Enter"
                     required
                     />
-            <button>Create</button>
+            <button onClick={handleCreateActivity} >Create</button>
             {addedCountries.map(c => {
                 return(
                     <h3 key={c.id} >{c.name}</h3>

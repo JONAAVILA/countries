@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
+import axios from "axios";
 
 
 const Form = ()=>{
@@ -50,7 +51,17 @@ const Form = ()=>{
     console.log(inputValues)
 
     const handleCreateActivity = (event)=>{
-
+        if(event){
+            try {
+                const activity = {
+                    inputValues,
+                    addedCountries
+                }
+                return axios.post("http://localhost:3001/countries/activities",activity)
+            } catch (error) {
+                return window.alert(error)
+            }
+        }
     }
 
 

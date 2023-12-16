@@ -1,8 +1,8 @@
 const { Country, Activity } = require('../../db.js');
 
-const createActivity = async (name,difficulty,duration,season,countries)=>{
+const createActivity = async (name,difficulty,duration,season)=>{
         
-        if(!name || !difficulty || !duration || !season || !countries){
+        if(!name || !difficulty || !duration || !season){
             throw new Error("No found parameters");
         }
         
@@ -11,14 +11,12 @@ const createActivity = async (name,difficulty,duration,season,countries)=>{
             difficulty,
             duration,
             season,
-            countries
         })
 
-        const faundCountry = await Country.findByPk(idPais);
-        if(faundCountry === undefined){
+        
+        if(newActivity === undefined){
             throw new Error("No found country")
         }else {
-            await newActivity.addCountry(faundCountry);
             return { message: 'Actividad creada exitosamente' }
         }
         

@@ -9,10 +9,10 @@ const Form = ()=>{
     const [ addedCountries, setAddedCountries ] = useState([])
     const [ search, setSearch ] = useState("")
     const [ inputValues, setInputValues ] = useState({
-        inputName : "",
-        selectDifficulty : "",
-        inputHours : "",
-        selectSeason : ""
+        name : "",
+        difficulty : "",
+        duration : "",
+        season : ""
     })
 
     const handleInput = (event)=>{
@@ -53,11 +53,7 @@ const Form = ()=>{
     const handleCreateActivity = async (event)=>{
         if(event){
             try {
-                const activity = {
-                    inputValues,
-                    addedCountries
-                }
-                const response = await axios.post("http://localhost:3001/countries/activities",activity)
+                const response = await axios.post("http://localhost:3001/countries/activities",inputValues)
                 console.log("Activity created",response)
             } catch (error) {
                 return window.alert(error)
@@ -69,28 +65,28 @@ const Form = ()=>{
     return(
         <div>
             <h1>Create Activity</h1>
-            <input  id="inputName"
-                    value={inputValues.inputName}
+            <input  id="name"
+                    value={inputValues.name}
                     onInput={handleActivity}
                     type="text"
                     placeholder="Name"
                     required
                     />
-            <select id="selectDifficulty" onChange={handleActivity} name="Difficulty" required >
+            <select id="difficulty" onChange={handleActivity} name="Difficulty" required >
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <input  id="inputHours"
-                    value={inputValues.inputHours}
+            <input  id="duration"
+                    value={inputValues.duration}
                     onChange={handleActivity}
                     type="number"
                     placeholder="Enter the time in hours"
                     required
                     />
-            <select id="selectSeason" onChange={handleActivity} name="Season" required >
+            <select id="season" onChange={handleActivity} name="Season" required >
                 <option value="Summer">Summer</option>
                 <option value="Autumn">Autumn</option>
                 <option value="Winter">Winter</option>

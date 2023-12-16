@@ -3,13 +3,11 @@ const createActivity = require('../../handlers/postHandlers/activityPost.js');
 const postActivity = async (req,res)=>{
     try {
         const { 
-            name,
-            difficulty,
-            duration,
-            season,
+            inputValues,
+            addedCountries
         } = req.body;
 
-        const resPostActvity = await createActivity(name,difficulty,duration,season);
+        const resPostActvity = await createActivity(inputValues, addedCountries);
         
         return res.status(200).json(resPostActvity);
     } catch (error) {

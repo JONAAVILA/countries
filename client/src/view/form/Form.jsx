@@ -48,13 +48,17 @@ const Form = ()=>{
         }))
         
     }
-    console.log(inputValues)
 
     const handleCreateActivity = async (event)=>{
         if(event){
             try {
-                const response = await axios.post("http://localhost:3001/countries/activities",inputValues)
-                console.log("Activity created",response)
+                const activity = {
+                    inputValues,
+                    addedCountries
+                }
+
+                const response = await axios.post("http://localhost:3001/countries/activities",activity)
+                return window.alert("Activity created")
             } catch (error) {
                 return window.alert(error)
             }

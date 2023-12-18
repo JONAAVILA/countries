@@ -1,4 +1,4 @@
-import { ALL_COUNTRIES } from "./ActionsTypes"
+import { ALL_COUNTRIES, FILTER } from "./ActionsTypes"
 import axios from 'axios';
 
 export const allCountries = ()=>{
@@ -11,4 +11,11 @@ export const allCountries = ()=>{
             payload: response.data
         })
     }
+}
+
+export const filterCountries = (continent) => {
+    return({
+        type:FILTER,
+        playload:continent
+    })
 }

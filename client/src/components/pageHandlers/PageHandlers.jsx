@@ -7,8 +7,7 @@ import Nav from "../../components/nav/Nav";
 export const PageHandlers = ()=>{
     const [ currentPage, setCurrentPage ] = useState(1);
     const itemsPerPage = 10;
-    const state = useSelector(state => state.countries)
-    const stateFiltered = state
+    const state = useSelector(state => state.countriesFiltered)
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;

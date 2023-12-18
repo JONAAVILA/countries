@@ -10,8 +10,12 @@ const Nav = ()=>{
 
     const handleFilter = (event)=>{
         const selectedContinent = event.target.value
+
+        if(selectedContinent === "All countries"){
+            
+        }
+
         dispatch(filterCountries(selectedContinent))
-        console.log(selectedContinent)
         
     }
     console.log(state)
@@ -22,10 +26,14 @@ const Nav = ()=>{
                 <option value={"D"}>Descendente</option>
             </select>
             <select onChange={handleFilter} id="">
-                <option value={'America'}>America</option>
+                <option value={"All countries"}>All countries</option>
+                <option value={'South America'}>South America</option>
+                <option value={'North America'}>North America</option>
                 <option value={'Africa'}>Africa</option>
                 <option value={'Asia'}>Asia</option>
-                <option value={'Europa'}>Europa</option>
+                <option value={'Oceania'}>Oceania</option>
+                <option value={'Europe'}>Europe</option>
+                <option value={'Antarctica'}>Antarctica</option>
             </select>
             <input type="text" />
             <button>Search</button>

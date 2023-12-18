@@ -16,7 +16,7 @@ const rootReducer = (state = initialState, action)=>{
             const filtered = state.countries.filter(c => c.continents === action.payload)
             return {
                 ...state,
-                countries: filtered
+                countriesFiltered: filtered
             }
         default:
             return state;   

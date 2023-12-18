@@ -1,24 +1,25 @@
 import { ALL_COUNTRIES, FILTER } from "./ActionsTypes";
 
 const initialState = {
-    countries:[]
+    countries:[],
+    countriesFiltered:[]
 };
 
-const rootReducer = (state = initialState, actions)=>{
-    switch (actions.type) {
+const rootReducer = (state = initialState, action)=>{
+    switch (action.type) {
         case ALL_COUNTRIES:     
             return {
                 ...state,
-                countries: actions.payload
+                countries: action.payload
             }
         case FILTER:
-            const filtered = state.countries.filter(c => c.name === actions.payload)
+            const filtered = state.countries.filter(c => c.continents === action.payload)
             return {
                 ...state,
                 countries: filtered
             }
         default:
-            return state;
+            return state;   
     }
 }
 

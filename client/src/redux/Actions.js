@@ -13,9 +13,9 @@ export const allCountries = ()=>{
     }
 }
 
-export const filterCountries = (continent) => {
+export const filterCountries = (continents) => {
     return({
         type:FILTER,
-        playload:continent
+        payload:continents
     })
 }

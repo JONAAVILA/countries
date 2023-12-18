@@ -8,6 +8,7 @@ export const PageHandlers = ()=>{
     const [ currentPage, setCurrentPage ] = useState(1);
     const itemsPerPage = 10;
     const state = useSelector(state => state.countries)
+    const stateFiltered = state
 
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -23,7 +24,6 @@ export const PageHandlers = ()=>{
             setCurrentPage(currentPage - 1)
         }
     }
-
     return(
         <div>
             <div>

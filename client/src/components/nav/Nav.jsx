@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SearchBar from "../SearchBar";
 import './Nav.css';
 import { filterCountries } from "../../redux/Actions";
@@ -6,25 +6,29 @@ import { filterCountries } from "../../redux/Actions";
 const Nav = ()=>{
 
     const dispatch = useDispatch()
+    const state = useSelector(state => state.countriesFiltered)
 
     const handleFilter = (event)=>{
-        dispatch(filterCountries(event.target.value))
+        const selectedContinent = event.target.value
+        dispatch(filterCountries(selectedContinent))
+        console.log(selectedContinent)
+        
     }
-
+    console.log(state)
     return(
         <div className="nav_conteiner">
             <select name="Orden" id="">
                 <option value={"A"}>Ascendente</option>
                 <option value={"D"}>Descendente</option>
             </select>
-            <select onChange={handleFilter} name="Continente" id="">
-                <option value="AMERICA">America</option>
-                <option value={"Africa"}>Africa</option>
-                <option value="ASIA">Asia</option>
-                <option value="EUROPA">Europa</option>
+            <select onChange={handleFilter} id="">
+                <option value={'America'}>America</option>
+                <option value={'Africa'}>Africa</option>
+                <option value={'Asia'}>Asia</option>
+                <option value={'Europa'}>Europa</option>
             </select>
             <input type="text" />
-            <button onClick={<SearchBar/>} >Search</button>
+            <button>Search</button>
         </div>
     )
 }

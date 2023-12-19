@@ -1,9 +1,10 @@
 import { useDispatch } from "react-redux";
 import './Nav.css';
 import { filterCountries, orderCountries } from "../../redux/Actions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Nav = ()=>{
+    const [ searchInputValue, setSearchInputValue ] = useState("")
     const dispatch = useDispatch()
 
     const handleFilter = (event)=>{
@@ -14,6 +15,14 @@ const Nav = ()=>{
     const handleOrder = (event)=>{
         const selectOrder = event.target.value
         dispatch(orderCountries(selectOrder))
+    }
+
+    const handleInputSearch = (event)=>{
+        setSearchInputValue(event.target.value)
+    } 
+
+    const handleSearch = ()=>{
+        
     }
 
     useEffect(()=>{
@@ -37,8 +46,8 @@ const Nav = ()=>{
                 <option value={'Europe'}>Europe</option>
                 <option value={'Antarctica'}>Antarctica</option>
             </select>
-            <input type="text" />
-            <button>Search</button>
+            <input value={searchInputValue} onChange={handleInputSearch} type="text" />
+            <button onClick={handleSearch} >Search</button>
         </div>
     )
 }

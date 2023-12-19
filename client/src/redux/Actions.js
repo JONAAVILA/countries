@@ -1,4 +1,4 @@
-import { ALL_COUNTRIES, FILTER, ORDER } from "./ActionsTypes"
+import { ALL_COUNTRIES, FILTER, ORDER, SEARCH } from "./ActionsTypes"
 import axios from 'axios';
 
 export const allCountries = ()=>{
@@ -26,3 +26,10 @@ export const orderCountries = (order) => {
         payload:order
     }
 }
+
+export const searchCountries = (country) => {
+    return({
+        type:SEARCH,
+        payload: country
+    })
+}   

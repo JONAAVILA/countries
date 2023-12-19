@@ -1,4 +1,4 @@
-import { ALL_COUNTRIES, FILTER, ORDER } from "./ActionsTypes";
+import { ALL_COUNTRIES, FILTER, ORDER, SEARCH } from "./ActionsTypes";
 
 const initialState = {
     countries:[],
@@ -35,6 +35,12 @@ const rootReducer = (state = initialState, action)=>{
                 ...state,
                 countriesFiltered: filterOrder
             };
+        case SEARCH:
+            const foundCountry = state.countries.find(c => c.name === action.payload)
+            return{
+                ...state,
+                countriesFiltered: foundCountry
+            }
         default:
             return state;   
     }

@@ -1,4 +1,4 @@
-import { ALL_COUNTRIES, FILTER } from "./ActionsTypes";
+import { ALL_COUNTRIES, FILTER, ORDER } from "./ActionsTypes";
 
 const initialState = {
     countries:[],
@@ -24,6 +24,17 @@ const rootReducer = (state = initialState, action)=>{
                 ...state,
                 countriesFiltered: filtered
             }
+        case ORDER:
+            const filterOrder = [...state.countriesFiltered]
+            if (action.payload === "A") {
+                 filterOrder.sort((a, b) => a.name.localeCompare(b.name))
+            } else {
+                filterOrder.sort((a, b) => b.name.localeCompare(a.name))
+            }
+            return {
+                ...state,
+                countriesFiltered: filterOrder
+            };
         default:
             return state;   
     }

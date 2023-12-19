@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import './Nav.css';
-import { filterCountries } from "../../redux/Actions";
+import { filterCountries, orderCountries } from "../../redux/Actions";
 import { useEffect } from "react";
 
 const Nav = ()=>{
@@ -11,6 +11,11 @@ const Nav = ()=>{
         dispatch(filterCountries(selectedContinent)) 
     }
 
+    const handleOrder = (event)=>{
+        const selectOrder = event.target.value
+        dispatch(orderCountries(selectOrder))
+    }
+
     useEffect(()=>{
         const defaultContinent = 'all'
         dispatch(filterCountries(defaultContinent))
@@ -18,9 +23,9 @@ const Nav = ()=>{
 
     return(
         <div className="nav_conteiner">
-            <select name="Orden" id="">
+            <select onChange={handleOrder} name="Orden" id="">
                 <option value={"A"}>Ascendente</option>
-                <option value={"D"}>Descendente</option>
+                <option value={"B"}>Descendente</option>
             </select>
             <select onChange={handleFilter} id="">
                 <option value={"all"}>All countries</option>

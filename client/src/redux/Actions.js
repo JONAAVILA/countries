@@ -1,4 +1,4 @@
-import { ALL_COUNTRIES, FILTER } from "./ActionsTypes"
+import { ALL_COUNTRIES, FILTER, ORDER } from "./ActionsTypes"
 import axios from 'axios';
 
 export const allCountries = ()=>{
@@ -19,3 +19,10 @@ export const filterCountries = (continents) => {
         payload:continents
     })
 }   
+
+export const orderCountries = (order) => {
+    return{
+        type:ORDER,
+        payload:order
+    }
+}

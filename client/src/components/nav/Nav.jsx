@@ -1,24 +1,21 @@
-import { useDispatch, useSelector } from "react-redux";
-import SearchBar from "../SearchBar";
+import { useDispatch } from "react-redux";
 import './Nav.css';
 import { filterCountries } from "../../redux/Actions";
+import { useEffect } from "react";
 
 const Nav = ()=>{
-
     const dispatch = useDispatch()
-    const state = useSelector(state => state.countriesFiltered)
 
     const handleFilter = (event)=>{
         const selectedContinent = event.target.value
-
-        if(selectedContinent === "All countries"){
-            
-        }
-
-        dispatch(filterCountries(selectedContinent))
-        
+        dispatch(filterCountries(selectedContinent)) 
     }
-    console.log(state)
+
+    useEffect(()=>{
+        const defaultContinent = 'all'
+        dispatch(filterCountries(defaultContinent))
+    },[dispatch])
+
     return(
         <div className="nav_conteiner">
             <select name="Orden" id="">
@@ -26,7 +23,7 @@ const Nav = ()=>{
                 <option value={"D"}>Descendente</option>
             </select>
             <select onChange={handleFilter} id="">
-                <option value={"All countries"}>All countries</option>
+                <option value={"all"}>All countries</option>
                 <option value={'South America'}>South America</option>
                 <option value={'North America'}>North America</option>
                 <option value={'Africa'}>Africa</option>

@@ -13,7 +13,13 @@ const rootReducer = (state = initialState, action)=>{
                 countries: action.payload
             }
         case FILTER:
-            const filtered = state.countries.filter(c => c.continents === action.payload)
+            const filtered = state.countries.filter(c =>{
+                if(action.payload === 'all'){
+                    return c
+                }else if(action.payload === c.continents){
+                    return c
+                }
+            })
             return {
                 ...state,
                 countriesFiltered: filtered

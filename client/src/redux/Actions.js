@@ -18,4 +18,4 @@ export const filterCountries = (continents) => {
         type:FILTER,
         payload:continents
     })
-}
+}   

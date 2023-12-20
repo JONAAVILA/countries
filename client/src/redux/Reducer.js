@@ -36,7 +36,7 @@ const rootReducer = (state = initialState, action)=>{
                 countriesFiltered: filterOrder
             };
         case SEARCH:
-            const foundCountry = state.countries.find(c => c.name === action.payload)
+            const foundCountry = state.countries.filter(c => c.name === action.payload)
             return{
                 ...state,
                 countriesFiltered: foundCountry

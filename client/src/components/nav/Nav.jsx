@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import './Nav.css';
-import { filterCountries, orderCountries } from "../../redux/Actions";
+import { filterCountries, orderCountries, searchCountries } from "../../redux/Actions";
 import { useEffect, useState } from "react";
 
 const Nav = ()=>{
@@ -22,7 +22,7 @@ const Nav = ()=>{
     } 
 
     const handleSearch = ()=>{
-        
+        dispatch(searchCountries(searchInputValue))
     }
 
     useEffect(()=>{

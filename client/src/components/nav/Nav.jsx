@@ -18,12 +18,13 @@ const Nav = ()=>{
     }
 
     const handleInputSearch = (event)=>{
-        const value = event.target.value[0].toUpperCase()
-        setSearchInputValue(value + event.target.value.slice(1))
+        setSearchInputValue(event.target.value)
     } 
 
     const handleSearch = ()=>{
-        dispatch(searchCountries(searchInputValue))
+        const value = searchInputValue[0].toUpperCase()
+        dispatch(searchCountries(value + searchInputValue.slice(1)))
+        setSearchInputValue("")
     }
 
     useEffect(()=>{

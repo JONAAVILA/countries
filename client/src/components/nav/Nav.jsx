@@ -18,7 +18,8 @@ const Nav = ()=>{
     }
 
     const handleInputSearch = (event)=>{
-        setSearchInputValue(event.target.value)
+        const value = event.target.value[0].toUpperCase()
+        setSearchInputValue(value + event.target.value.slice(1))
     } 
 
     const handleSearch = ()=>{

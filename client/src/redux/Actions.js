@@ -13,6 +13,10 @@ export const allCountries = ()=>{
     }
 }
 
+export const allActivities = () => {
+    
+}
+
 export const filterCountries = (continents) => {
     return({
         type:FILTER,
@@ -32,4 +36,4 @@ export const searchCountries = (country) => {
         type:SEARCH,
         payload: country
     })
-}   
+}  

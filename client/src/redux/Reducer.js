@@ -28,7 +28,7 @@ const rootReducer = (state = initialState, action)=>{
             const filterOrder = [...state.countriesFiltered]
             if (action.payload === "A") {
                  filterOrder.sort((a, b) => a.name.localeCompare(b.name))
-            } else {
+            }else{
                 filterOrder.sort((a, b) => b.name.localeCompare(a.name))
             }
             return {

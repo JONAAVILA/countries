@@ -1,9 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import './Nav.css';
 import { filterCountries, orderCountries, searchCountries } from "../../redux/Actions";
 import { useEffect, useState } from "react";
 
 const Nav = ()=>{
+    const state = useSelector(state => state.countries)
     const [ searchInputValue, setSearchInputValue ] = useState("")
     const dispatch = useDispatch()
 
@@ -22,8 +23,11 @@ const Nav = ()=>{
     } 
 
     const handleSearch = ()=>{
-        const value = searchInputValue[0].toUpperCase()
-        dispatch(searchCountries(value + searchInputValue.slice(1)))
+        const value = searchInputValue[0].toUpperCase() + searchInputValue.slice(1)
+        if(!state.find(c => c.name === value)){
+            window.alert("Invalid name")
+        }
+        dispatch(searchCountries(value))
         setSearchInputValue("")
     }
 

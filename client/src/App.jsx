@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { allCountries, filterCountries } from './redux/Actions';
+import { allCountries } from './redux/Actions';
 import Landing from './view/landing/Landing';
 import Home from './view/home/Home';
-import SearchBar from './components/SearchBar';
+import SearchBar from './components/searchBar/SearchBar';
 import Detail from './view/detail/Detail';
 import Form from './view/form/Form';
 

@@ -27,7 +27,9 @@ const rootReducer = (state = initialState, action)=>{
         case ORDER:
             const filterOrder = [...state.countriesFiltered]
             if (action.payload === "A") {
-                 filterOrder.sort((a, b) => a.name.localeCompare(b.name))
+                filterOrder.sort((a, b) => a.name.localeCompare(b.name))
+            }else if(action.payload === "Random"){
+                filterOrder.sort(() => Math.random() - 0.5)
             }else{
                 filterOrder.sort((a, b) => b.name.localeCompare(a.name))
             }

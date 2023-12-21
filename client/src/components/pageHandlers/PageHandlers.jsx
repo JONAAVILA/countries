@@ -2,7 +2,7 @@ import './PageHandlers.css';
 import { useState } from "react"
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Nav from "../../components/nav/Nav";
+import SearchBar from '../searchBar/SearchBar';
 
 export const PageHandlers = ()=>{
     const [ currentPage, setCurrentPage ] = useState(1);
@@ -26,7 +26,7 @@ export const PageHandlers = ()=>{
     return(
         <div>
             <div>
-                <Nav/>
+                <SearchBar/>
             </div>
             <div className='page_conteiner'>
             {state.slice(startIndex, endIndex).map(p =>{

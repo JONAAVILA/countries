@@ -13,10 +13,6 @@ const SearchBar = ()=>{
     }
 
     const handleOrder = (event)=>{
-        if(event.target.value === "Random"){
-            const defaultContinent = 'all'
-            return dispatch(filterCountries(defaultContinent))
-        }
         const selectOrder = event.target.value
         dispatch(orderCountries(selectOrder))
     }
@@ -26,7 +22,7 @@ const SearchBar = ()=>{
     } 
 
     const handleSearch = ()=>{
-        const value = searchInputValue[0].toUpperCase() + searchInputValue.slice(1)
+        const value = searchInputValue[0].toUpperCase() + searchInputValue.toLowerCase().slice(1)
         if(!state.find(c => c.name === value)){
             window.alert("Invalid name")
             return setSearchInputValue("")

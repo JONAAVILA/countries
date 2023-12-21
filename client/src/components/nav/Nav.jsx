@@ -1,10 +1,20 @@
 import './Nav.css';
-import SearchBar from '../searchBar/SearchBar';
+import { useLocation, Link } from 'react-router-dom';
 
 const Nav = ()=>{
+
+    const Location = useLocation()
+    Location.pathname === "/form"
+    Location.pathname === "/home"
+
     return(
         <div>
-            <SearchBar/>
+            <Link to="/form" >
+                <button>Create Activity</button>
+            </Link>
+            <Link to="/home" >
+                <button>Home</button>
+            </Link>
         </div>
     )
 }

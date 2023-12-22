@@ -1,9 +1,20 @@
-const { Activity } = require('../../db.js');
+const { Activity, CountryActivity } = require('../../db.js');
 
 const allActivities = async ()=>{
-
-    const allActivity = await Activity.findAll();
-    return allActivity
+    try {
+        const allActivity = await Activity.findAll();
+        const allCountryActivity = await CountryActivity.findAll()
+        if(allActivity === undefined) throw new Error("AllActivity error")
+        if(allCountryActivity === undefined) throw new Error("AllCountryActivity error")
+         return {
+            ...allActivity,
+            ...allCountryActivity
+        }
+    } catch (error) {
+        console.log(error)
+        return {error: error.message}
+    }
+    
 }
 
 module.exports = allActivities;

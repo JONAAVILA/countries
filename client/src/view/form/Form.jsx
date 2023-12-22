@@ -4,7 +4,10 @@ import axios from "axios";
 
 
 const Form = ()=>{
-    
+    const activities = useSelector(state => state.activities)
+    const { allActivity, allCountryActivity } = activities
+    console.log(allActivity)
+    console.log(allCountryActivity)
     const state = useSelector(state => state.countries)
     const [ addedCountries, setAddedCountries ] = useState([])
     const [ search, setSearch ] = useState("")
@@ -46,7 +49,6 @@ const Form = ()=>{
             ...prevState,
             [id] : value    
         }))
-        
     }
 
     const handleCreateActivity = async (event)=>{
@@ -56,7 +58,6 @@ const Form = ()=>{
                     inputValues,
                     addedCountries
                 }
-
                 const response = await axios.post("http://localhost:3001/countries/activities",activity)
                 return window.alert("Activity created")
             } catch (error) {
@@ -65,9 +66,9 @@ const Form = ()=>{
         }
     }
 
-
     return(
-        <div>
+    <div>
+          <div>
             <h1>Create Activity</h1>
             <input  id="name"
                     value={inputValues.name}
@@ -110,6 +111,20 @@ const Form = ()=>{
                 )
             })}
         </div>
+        <div>
+            {/* {activities.map(activity => {
+                return(
+                    <div key={activity.name}  >
+                        <h2>Name: {activity.name}</h2>
+                        <h3>Difficulty: {activity.difficulty}</h3>
+                        <h3>Duration: {activity.duration}</h3>
+                        <h3>Season: {activity.season}</h3>
+                    </div>
+                )
+            })} */}
+        </div>  
+    </div>
+        
     )
 }
 

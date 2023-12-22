@@ -1,8 +1,9 @@
-import { ALL_COUNTRIES, FILTER, ORDER, SEARCH } from "./ActionsTypes";
+import { ALL_ACTIVITIES, ALL_COUNTRIES, FILTER, ORDER, SEARCH } from "./ActionsTypes";
 
 const initialState = {
     countries:[],
-    countriesFiltered:[]
+    countriesFiltered:[],
+    activities:{}
 };
 
 const rootReducer = (state = initialState, action)=>{
@@ -11,6 +12,11 @@ const rootReducer = (state = initialState, action)=>{
             return {
                 ...state,
                 countries: action.payload
+            }
+        case ALL_ACTIVITIES:
+            return {
+                ...state,
+                activities: action.payload
             }
         case FILTER:
             const filtered = state.countries.filter(c =>{

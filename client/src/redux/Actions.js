@@ -1,4 +1,4 @@
-import { ALL_COUNTRIES, FILTER, ORDER, SEARCH } from "./ActionsTypes"
+import { ALL_ACTIVITIES, ALL_COUNTRIES, FILTER, ORDER, SEARCH } from "./ActionsTypes"
 import axios from 'axios';
 
 export const allCountries = ()=>{
@@ -14,7 +14,14 @@ export const allCountries = ()=>{
 }
 
 export const allActivities = () => {
-    
+    const URL = 'http://localhost:3001/countries/activities';
+    return async (dispatch)=>{
+        const response = await axios(URL)
+        return dispatch({
+            type: ALL_ACTIVITIES,
+            payload: response.data
+        })
+    }
 }
 
 export const filterCountries = (continents) => {

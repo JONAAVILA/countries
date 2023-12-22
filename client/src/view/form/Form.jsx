@@ -5,9 +5,6 @@ import axios from "axios";
 
 const Form = ()=>{
     const activities = useSelector(state => state.activities)
-    const { allActivity, allCountryActivity } = activities
-    console.log(allActivity)
-    console.log(allCountryActivity)
     const state = useSelector(state => state.countries)
     const [ addedCountries, setAddedCountries ] = useState([])
     const [ search, setSearch ] = useState("")
@@ -106,22 +103,31 @@ const Form = ()=>{
                     />
             <button onClick={handleCreateActivity} >Create</button>
             {addedCountries.map(c => {
+
                 return(
                     <h3 key={c.id} >{c.name}</h3>
                 )
             })}
         </div>
         <div>
-            {/* {activities.map(activity => {
-                return(
-                    <div key={activity.name}  >
-                        <h2>Name: {activity.name}</h2>
-                        <h3>Difficulty: {activity.difficulty}</h3>
-                        <h3>Duration: {activity.duration}</h3>
-                        <h3>Season: {activity.season}</h3>
-                    </div>
-                )
-            })} */}
+            {!activities.length? (<h1>Activities not found</h1>) : (
+                <div>
+                    {activities.map(activity =>{
+                        return(
+                        <div key={activity.name}>
+                        <h1>{activity.name}</h1>
+                        {activity.Countries.map(country =>{
+                            return(
+                                <div key={country.name}>
+                                    <h3>{country.name}</h3>
+                                </div>
+                            )
+                            })} 
+                        </div>
+                        ) 
+                    })}
+                </div>
+            )}
         </div>  
     </div>
         

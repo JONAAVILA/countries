@@ -1,20 +1,22 @@
-const { Activity, CountryActivity } = require('../../db.js');
+const { Activity, Country } = require('../../db.js');
 
 const allActivities = async ()=>{
     try {
-        const allActivity = await Activity.findAll();
-        const allCountryActivity = await CountryActivity.findAll()
-        if(allActivity === undefined) throw new Error("AllActivity error")
-        if(allCountryActivity === undefined) throw new Error("AllCountryActivity error")
-         return {
-            ...allActivity,
-            ...allCountryActivity
-        }
+        const activities = await Activity.findAll({
+            include: [{
+              model: Country,
+              through: {
+                attributes: [],
+              },
+            }],
+          })
+    
+        if(!activities.length) throw new Error("Activities not found")
+        return activities
     } catch (error) {
         console.log(error)
         return {error: error.message}
-    }
-    
+    }   
 }
 
 module.exports = allActivities;

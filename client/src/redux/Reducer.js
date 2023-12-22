@@ -3,7 +3,7 @@ import { ALL_ACTIVITIES, ALL_COUNTRIES, FILTER, ORDER, SEARCH } from "./ActionsT
 const initialState = {
     countries:[],
     countriesFiltered:[],
-    activities:{}
+    activities:[]
 };
 
 const rootReducer = (state = initialState, action)=>{

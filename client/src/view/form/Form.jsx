@@ -1,9 +1,11 @@
-import { useState } from "react"
-import { useSelector } from "react-redux"
+import { useEffect, useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
 import axios from "axios";
+import { allActivities } from "../../redux/Actions";
 
 
 const Form = ()=>{
+    const dispatch = useDispatch()
     const activities = useSelector(state => state.activities)
     const state = useSelector(state => state.countries)
     const [ addedCountries, setAddedCountries ] = useState([])
@@ -14,6 +16,10 @@ const Form = ()=>{
         duration : "",
         season : ""
     })
+
+    useEffect(()=>{
+        dispatch(allActivities())
+    },[handleCreateActivity])
 
     const handleInput = (event)=>{
         if(event){
@@ -56,9 +62,10 @@ const Form = ()=>{
                     addedCountries
                 }
                 const response = await axios.post("http://localhost:3001/countries/activities",activity)
+                if(response === undefined) throw new Error({error: error.message})
                 return window.alert("Activity created")
             } catch (error) {
-                return window.alert(error)
+                return window.alert(error)  
             }
         }
     }
@@ -115,7 +122,11 @@ const Form = ()=>{
                     {activities.map(activity =>{
                         return(
                         <div key={activity.name}>
-                        <h1>{activity.name}</h1>
+                        <h2>Name Activity: {activity.name}</h2>
+                        <h3>Difficulty: {activity.difficulty}</h3>
+                        <h3>Duration: {activity.duration}</h3>
+                        <h3>Season: {activity.season}</h3>
+                        <h2>Related Countries</h2>
                         {activity.Countries.map(country =>{
                             return(
                                 <div key={country.name}>

@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { allActivities, allCountries } from './redux/Actions';
+import { allCountries } from './redux/Actions';
 import Landing from './view/landing/Landing';
 import Home from './view/home/Home';
 import SearchBar from './components/searchBar/SearchBar';
@@ -17,7 +17,6 @@ function App() {
 
   useEffect(()=>{
         dispatch(allCountries())
-        dispatch(allActivities())
   }, [])
 
   return (

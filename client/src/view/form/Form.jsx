@@ -23,7 +23,7 @@ const Form = ()=>{
 
     useEffect(()=>{
         dispatch(allActivities())
-    },[handleCreateActivity])
+    },[])
 
     const handleInput = (event)=>{
         if(event){
@@ -67,7 +67,8 @@ const Form = ()=>{
                 }
                 const response = await axios.post("http://localhost:3001/countries/activities",activity)
                 if(response === undefined) throw new Error({error: error.message})
-                return window.alert("Activity created")
+                setAddedCountries([])
+                window.alert("Activity created")
             } catch (error) {
                 return window.alert(error)  
             }

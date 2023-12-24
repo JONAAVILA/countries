@@ -8,7 +8,6 @@ const Form = ()=>{
 
     //terminar useEffect de activities para que se carguen al montarse el componente
     //configurar input activities con valores por default
-
     const dispatch = useDispatch()
     const activities = useSelector(state => state.activities)
     const state = useSelector(state => state.countries)
@@ -23,7 +22,7 @@ const Form = ()=>{
 
     useEffect(()=>{
         dispatch(allActivities())
-    },[])
+    },[addedCountries])
 
     const handleInput = (event)=>{
         if(event){
@@ -72,7 +71,7 @@ const Form = ()=>{
             } catch (error) {
                 return window.alert(error)  
             }
-        }
+        }  
     }
 
     return(

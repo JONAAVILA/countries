@@ -6,7 +6,7 @@ import { allActivities } from "../../redux/Actions";
 
 const Form = ()=>{
 
-    //terminar useEffect de activities para que se carguen al montarse el componente
+
     //configurar input activities con valores por default
     const dispatch = useDispatch()
     const activities = useSelector(state => state.activities)
@@ -85,13 +85,13 @@ const Form = ()=>{
                     placeholder="Name"
                     required
                     />
-            <select id="difficulty" onChange={handleActivity} name="Difficulty" required >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+            <input  type="text"
+                    id="difficulty"
+                    onChange={handleActivity}
+                    name="Difficulty"
+                    placeholder="Enter a number from 1 to 5"
+                    required
+                    />
             <input  id="duration"
                     value={inputValues.duration}
                     onChange={handleActivity}
@@ -99,12 +99,13 @@ const Form = ()=>{
                     placeholder="Enter the time in hours"
                     required
                     />
-            <select id="season" onChange={handleActivity} name="Season" required >
-                <option value="Summer">Summer</option>
-                <option value="Autumn">Autumn</option>
-                <option value="Winter">Winter</option>
-                <option value="Spring">Spring</option>
-            </select>
+            <input  type="text"
+                    id="season"
+                    onChange={handleActivity}
+                    name="Season"
+                    placeholder="Enter a season"
+                    required
+                    />
             <input  id="inputCountry"
                     type="text"
                     onKeyPress={addCountrie}

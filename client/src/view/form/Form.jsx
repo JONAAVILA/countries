@@ -2,12 +2,11 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios";
 import { allActivities } from "../../redux/Actions";
+import validate from "./validate";
 
 
 const Form = ()=>{
 
-
-    //configurar input activities con valores por default
     const dispatch = useDispatch()
     const activities = useSelector(state => state.activities)
     const state = useSelector(state => state.countries)
@@ -19,6 +18,7 @@ const Form = ()=>{
         duration : "",
         season : ""
     })
+    const [ errors, setErros ] = useState({})
 
     useEffect(()=>{
         dispatch(allActivities())
@@ -57,7 +57,7 @@ const Form = ()=>{
         }))
     }
 
-    const handleCreateActivity = async (event)=>{
+    const handleSubmitActivity = async (event)=>{
         if(event){
             try {
                 const activity = {
@@ -76,7 +76,8 @@ const Form = ()=>{
 
     return(
     <div>
-          <div>
+          <div> 
+            <form onSubmit={handleSubmitActivity} action="">
             <h1>Create Activity</h1>
             <input  id="name"
                     value={inputValues.name}
@@ -113,7 +114,9 @@ const Form = ()=>{
                     placeholder="Type a countrie and press Enter"
                     required
                     />
-            <button onClick={handleCreateActivity} >Create</button>
+            <button>Create</button> 
+            </form>
+            
             {addedCountries.map(c => {
 
                 return(

@@ -18,7 +18,7 @@ const Form = ()=>{
         duration : "",
         season : ""
     })
-    const [ errors, setErros ] = useState({})
+    const [ errors, setErrors ] = useState({})
 
     useEffect(()=>{
         dispatch(allActivities())
@@ -58,20 +58,26 @@ const Form = ()=>{
     }
 
     const handleSubmitActivity = async (event)=>{
-        if(event){
-            try {
-                const activity = {
-                    inputValues,
-                    addedCountries
-                }
-                const response = await axios.post("http://localhost:3001/countries/activities",activity)
-                if(response === undefined) throw new Error({error: error.message})
-                setAddedCountries([])
-                window.alert("Activity created")
-            } catch (error) {
-                return window.alert(error)  
-            }
-        }  
+        event.preventDefault()
+
+        const validationErrors = validate(inputValues)
+        const hasErrors = Object.values(validationErrors).some(error => error !== "");
+
+        if (hasErrors) {
+            setErrors(validationErrors)
+            return;
+        }
+       
+            
+        const activity = {
+            inputValues,
+            addedCountries
+        }
+        const response = await axios.post("http://localhost:3001/countries/activities",activity)
+        if(response === undefined) throw new Error({error: error.message})
+        setAddedCountries([])
+        window.alert("Activity created")
+ 
     }
 
     return(
@@ -112,10 +118,13 @@ const Form = ()=>{
                     onKeyPress={addCountrie}
                     onChange={handleInput}
                     placeholder="Type a countrie and press Enter"
-                    required
                     />
             <button>Create</button> 
             </form>
+            <div>
+                {errors.name && <p>{errors.name}</p>}
+            </div>
+            
             
             {addedCountries.map(c => {
 

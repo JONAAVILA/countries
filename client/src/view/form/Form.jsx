@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import axios from "axios";
 import { allActivities } from "../../redux/Actions";
 import validate from "./validate";
+import './Form.css';
 
 
 const Form = ()=>{
@@ -102,10 +103,13 @@ const Form = ()=>{
     }   
 
     return(
-    <div>
-          <div> 
+    <div className="box_form" >
+          <div className="form_conteiner" > 
             <form onSubmit={handleSubmitActivity}  action="">
-            <h1>Create Activity</h1>
+            <div>
+              <h1>Create Activity</h1>  
+            </div>
+            <div className="input_conteiner" >
             <input  id="name"
                     value={inputValues.name}
                     onChange={handleActivity}
@@ -141,7 +145,9 @@ const Form = ()=>{
                     onKeyPress={addCountrie}
                     onChange={handleInput}
                     placeholder="Type a countrie and press Enter"
-                    />
+                    />  
+            </div>
+            
             <button type="submit">Create</button> 
             </form>
             <div>

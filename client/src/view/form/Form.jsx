@@ -52,6 +52,13 @@ const Form = ()=>{
 
     const handleActivity = (event)=>{
         const { id, value } = event.target
+
+        const validationErrors = validate({ ...inputValues, [id]: value });
+        setErrors((prevErrors) => ({
+            ...prevErrors,
+            ...validationErrors,
+        }));
+
         setInputValues(prevState => ({
             ...prevState,
             [id] : value    
@@ -61,14 +68,6 @@ const Form = ()=>{
     const handleSubmitActivity = async (event)=>{
         try {
             event.preventDefault()
-            const validationErrors = validate(inputValues)
-            console.log(validationErrors)
-            const hasErrors = Object.values(validationErrors).some(error => error !== "");
-
-            if (hasErrors) {
-                setErrors(validationErrors)
-                return;
-            }
        
             const activity = {
                 inputValues,
@@ -101,7 +100,7 @@ const Form = ()=>{
             <h1>Create Activity</h1>
             <input  id="name"
                     value={inputValues.name}
-                    onInput={handleActivity}
+                    onChange={handleActivity}
                     type="text"
                     placeholder="Name"
                     required
@@ -139,6 +138,9 @@ const Form = ()=>{
             </form>
             <div>
                 {errors.name && <p>{errors.name}</p>}
+                {errors.difficulty && <p>{errors.difficulty}</p>}
+                {errors.duration && <p>{errors.duration}</p>}
+                {errors.season && <p>{errors.season}</p>}
             </div>
             
             

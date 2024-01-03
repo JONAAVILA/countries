@@ -2,7 +2,7 @@ export default function validate (inputs){
     const errors = {}
 
     const regexNameActivity = /^[a-zA-Z0-9 ]+$/;
-    const validateNameActivity = inputs.name.length && inputs.name.length > 1 && regexNameActivity.test(inputs.name)
+    const validateNameActivity = regexNameActivity.test(inputs.name)
     if(inputs.name && !validateNameActivity){
         errors['name'] = "Enter a valid name"
     }else{
@@ -33,13 +33,13 @@ export default function validate (inputs){
         errors['season'] = ""
     }
 
-    const regexCountry = /^[a-zA-Z]+$/
-    const validateCountry = regexCountry.test(inputs.country)
-    if(inputs.country && !validateCountry){
-        errors['country'] = "Invalid name country"
-    }else{
-        errors['country'] = ""
-    }
+    // const regexCountry = /^[a-zA-Z]+$/
+    // const validateCountry = regexCountry.test(inputs.country)
+    // if(inputs.country && !validateCountry){
+    //     errors['country'] = "Invalid name country"
+    // }else{
+    //     errors['country'] = ""
+    // }
 
     return errors;
 }

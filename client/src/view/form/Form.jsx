@@ -39,9 +39,14 @@ const Form = ()=>{
             const matchCountry = addedCountries.find(c => c.name === search)
 
             if(matchCountry){
-                       window.alert("The country has already been added")
+                window.alert("The country has already been added")
                 return event.target.value = ""
-            } 
+            }
+
+            if(country === undefined){
+                window.alert('Invalid country')
+                return event.target.value = ""
+            }
 
             if(country){
                 setAddedCountries([ ...addedCountries, country ])
@@ -68,7 +73,6 @@ const Form = ()=>{
     const handleSubmitActivity = async (event)=>{
         try {
             event.preventDefault()
-       
             const activity = {
                 inputValues,
                 addedCountries

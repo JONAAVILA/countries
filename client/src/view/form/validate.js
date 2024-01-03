@@ -28,7 +28,7 @@ export default function validate (inputs){
     const regexSeason = /^(Summer|Autumn|Winter|Spring)$/
     const validateSeason = regexSeason.test(inputs.season)
     if(inputs.season && !validateSeason){
-        errors['season'] = "Invalid value"
+        errors['season'] = "Enter a valid season, ej: Winter"
     }else{
         errors['season'] = ""
     }

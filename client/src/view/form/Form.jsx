@@ -34,6 +34,7 @@ const Form = ()=>{
 
     const addCountrie = (event)=>{
         if(event.key === "Enter"){
+            event.preventDefault()
             const country = state.find(p => p.name === search)
             const matchCountry = addedCountries.find(c => c.name === search)
 
@@ -46,7 +47,7 @@ const Form = ()=>{
                 setAddedCountries([ ...addedCountries, country ])
                 event.target.value = "" 
             }
-        }
+        }   
     }
 
     const handleActivity = (event)=>{
@@ -58,32 +59,43 @@ const Form = ()=>{
     }
 
     const handleSubmitActivity = async (event)=>{
-        event.preventDefault()
+        try {
+            event.preventDefault()
+            const validationErrors = validate(inputValues)
+            const hasErrors = Object.values(validationErrors).some(error => error !== "");
 
-        const validationErrors = validate(inputValues)
-        const hasErrors = Object.values(validationErrors).some(error => error !== "");
-
-        if (hasErrors) {
-            setErrors(validationErrors)
-            return;
-        }
+            if (hasErrors) {
+                setErrors(validationErrors)
+                return;
+            }
        
-            
-        const activity = {
-            inputValues,
-            addedCountries
+            const activity = {
+                inputValues,
+                addedCountries
+            }
+            const response = await axios.post("http://localhost:3001/countries/activities",activity)
+            if(response === undefined) throw new Error({error: error.message})
+            setAddedCountries([])
+
+            setInputValues(prevState => ({
+                ...prevState,
+                name : "",
+                difficulty : "",
+                duration : "",
+                season : ""
+            }))
+
+            return window.alert(response.data.message) 
+        } catch (error) {
+            return window.alert(error.message)
         }
-        const response = await axios.post("http://localhost:3001/countries/activities",activity)
-        if(response === undefined) throw new Error({error: error.message})
-        setAddedCountries([])
-        window.alert("Activity created")
- 
-    }
+        
+    }   
 
     return(
     <div>
           <div> 
-            <form onSubmit={handleSubmitActivity} action="">
+            <form onSubmit={handleSubmitActivity}  action="">
             <h1>Create Activity</h1>
             <input  id="name"
                     value={inputValues.name}
@@ -92,8 +104,9 @@ const Form = ()=>{
                     placeholder="Name"
                     required
                     />
-            <input  type="text"
-                    id="difficulty"
+            <input  id="difficulty"
+                    value={inputValues.difficulty}
+                    type="text"
                     onChange={handleActivity}
                     name="Difficulty"
                     placeholder="Enter a number from 1 to 5"
@@ -102,12 +115,13 @@ const Form = ()=>{
             <input  id="duration"
                     value={inputValues.duration}
                     onChange={handleActivity}
-                    type="number"
+                    type="text"
                     placeholder="Enter the time in hours"
                     required
                     />
-            <input  type="text"
-                    id="season"
+            <input  id="season"
+                    value={inputValues.season}
+                    type="text"
                     onChange={handleActivity}
                     name="Season"
                     placeholder="Enter a season"
@@ -119,7 +133,7 @@ const Form = ()=>{
                     onChange={handleInput}
                     placeholder="Type a countrie and press Enter"
                     />
-            <button>Create</button> 
+            <button type="submit">Create</button> 
             </form>
             <div>
                 {errors.name && <p>{errors.name}</p>}

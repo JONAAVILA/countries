@@ -28,7 +28,7 @@ const Form = ()=>{
         if(event){
             const countrie = event.target.value
             let aux = countrie[0].toUpperCase()
-            setSearch(aux + countrie.slice(1))
+            setSearch(aux + countrie.slice(1).toLowerCase())
         }
     }
 
@@ -62,6 +62,7 @@ const Form = ()=>{
         try {
             event.preventDefault()
             const validationErrors = validate(inputValues)
+            console.log(validationErrors)
             const hasErrors = Object.values(validationErrors).some(error => error !== "");
 
             if (hasErrors) {
@@ -73,6 +74,7 @@ const Form = ()=>{
                 inputValues,
                 addedCountries
             }
+
             const response = await axios.post("http://localhost:3001/countries/activities",activity)
             if(response === undefined) throw new Error({error: error.message})
             setAddedCountries([])

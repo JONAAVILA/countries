@@ -1,7 +1,7 @@
 export default function validate (inputs){
     const errors = {}
 
-    const regexNameActivity = /^[a-zA-Z ]+$/;
+    const regexNameActivity = /^[a-zA-Z0-9 ]+$/;
     const validateNameActivity = inputs.name.length && inputs.name.length > 1 && regexNameActivity.test(inputs.name)
     if(inputs.name && !validateNameActivity){
         errors['name'] = "Enter a valid name"
@@ -12,7 +12,7 @@ export default function validate (inputs){
     const regexDifficulty = /^[1-5]$/
     const validateDifficulty = regexDifficulty.test(inputs.difficulty)
     if(!validateDifficulty && inputs.difficulty){
-        errors['difficulty'] = "Enter a valid value"
+        errors['difficulty'] = "Enter a number from 1 to 5"
     }else{
         errors['difficulty'] = ""
     }
@@ -20,7 +20,7 @@ export default function validate (inputs){
     const regexDuration = /^(0?|[1-9]|[1][0-9]|24)$/
     const validateDuration = regexDuration.test(inputs.duration)
     if(inputs.duration && !validateDuration){
-        errors['duration'] = "Enter a valid value"
+        errors['duration'] = "Enter a number from 1 to 24"
     }else{
         errors['duration'] = ""
     }
@@ -38,7 +38,7 @@ export default function validate (inputs){
     if(inputs.country && !validateCountry){
         errors['country'] = "Invalid name country"
     }else{
-        errors['coutry'] = ""
+        errors['country'] = ""
     }
 
     return errors;

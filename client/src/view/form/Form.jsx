@@ -46,9 +46,7 @@ const Form = ()=>{
             if(country === undefined){
                 window.alert('Invalid country')
                 return event.target.value = ""
-            }
-
-            if(country){
+            }else{
                 setAddedCountries([ ...addedCountries, country ])
                 event.target.value = "" 
             }
@@ -57,6 +55,12 @@ const Form = ()=>{
 
     const handleActivity = (event)=>{
         const { id, value } = event.target
+
+        if(id === "name"){
+            if(activities.find(activity => activity.name === value)){
+                return window.alert('Name in use')
+            }
+        }
 
         const validationErrors = validate({ ...inputValues, [id]: value });
         setErrors((prevErrors) => ({

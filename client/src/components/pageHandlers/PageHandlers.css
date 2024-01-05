@@ -1,8 +1,7 @@
 .page_conteiner{
     display: grid;
     justify-content: center;
-    width: 100%;
-    max-width: 100vh;
+    max-width: 100%;
     grid-template-columns: repeat(4, 1fr);
 }
 

@@ -2,6 +2,4 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 100vh;
-    max-height: 100vh;
 }

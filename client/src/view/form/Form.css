@@ -1,8 +1,23 @@
 .box_form{
     display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .form_conteiner{
-    width: 400px;
+    width: 300px;
     justify-content: left;
+}
+
+.input_conteiner{
+    display: grid;
+}
+
+.input_conteiner input{
+    margin: 3px;
+}
+
+.activity_conteiner{
+    display: flex;
+    justify-content: center;
 }

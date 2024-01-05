@@ -110,42 +110,42 @@ const Form = ()=>{
               <h1>Create Activity</h1>  
             </div>
             <div className="input_conteiner" >
-            <input  id="name"
-                    value={inputValues.name}
-                    onChange={handleActivity}
-                    type="text"
-                    placeholder="Name"
-                    required
-                    />
-            <input  id="difficulty"
-                    value={inputValues.difficulty}
-                    type="text"
-                    onChange={handleActivity}
-                    name="Difficulty"
-                    placeholder="Enter a number from 1 to 5"
-                    required
-                    />
-            <input  id="duration"
-                    value={inputValues.duration}
-                    onChange={handleActivity}
-                    type="text"
-                    placeholder="Enter the time in hours"
-                    required
-                    />
-            <input  id="season"
-                    value={inputValues.season}
-                    type="text"
-                    onChange={handleActivity}
-                    name="Season"
-                    placeholder="Enter a season"
-                    required
-                    />
-            <input  id="inputCountry"
-                    type="text"
-                    onKeyPress={addCountrie}
-                    onChange={handleInput}
-                    placeholder="Type a countrie and press Enter"
-                    />  
+                <input  id="name"
+                        value={inputValues.name}
+                        onChange={handleActivity}
+                        type="text"
+                        placeholder="Name"
+                        required
+                        />
+                <input  id="difficulty"
+                        value={inputValues.difficulty}
+                        type="text"
+                        onChange={handleActivity}
+                        name="Difficulty"
+                        placeholder="Enter a number from 1 to 5"
+                        required
+                        />
+                <input  id="duration"
+                        value={inputValues.duration}
+                        onChange={handleActivity}
+                        type="text"
+                        placeholder="Enter the time in hours"
+                        required
+                        />
+                <input  id="season"
+                        value={inputValues.season}
+                     type="text"
+                        onChange={handleActivity}
+                        name="Season"
+                        placeholder="Enter a season"
+                        required
+                        />
+                <input  id="inputCountry"
+                        type="text"
+                        onKeyPress={addCountrie}
+                        onChange={handleInput}
+                        placeholder="Type a countrie and press Enter"
+                        />  
             </div>
             
             <button type="submit">Create</button> 
@@ -165,7 +165,7 @@ const Form = ()=>{
                 )
             })}
         </div>
-        <div>
+        <div className="activity_conteiner">
             {!activities.length? (<h1>Activities not found</h1>) : (
                 <div>
                     {activities.map(activity =>{

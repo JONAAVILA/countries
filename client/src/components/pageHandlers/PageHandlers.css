@@ -5,6 +5,13 @@
     grid-template-columns: repeat(4, 1fr);
 }
 
+.activity_conteiner{
+    height: 200px;
+    width: 350px;
+    border-radius: 5px;
+    border: solid 1px white;
+}
+
 @media screen and (max-width:768px){
     .page_conteiner{
         grid-template-columns: repeat(2, 1fr);

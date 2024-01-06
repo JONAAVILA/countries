@@ -23,11 +23,11 @@ export const PageHandlers = ()=>{
         }
     }
     return(
-        <div>
+        <div className='page_conteiner' >
             <div>
                 <SearchBar/>
             </div>
-            <div className='page_conteiner'>
+            <div className='activity_conteiner' >
             {state.slice(startIndex, endIndex).map(p =>{
                 return(
                     <div key={p.id} style={{ backgroundImage: `url(${p.flags})`,
@@ -42,12 +42,12 @@ export const PageHandlers = ()=>{
                 )
             })}
             
-        </div>
-        <div className='paginator_conteiner'>
-            <button onClick={prevHandler} >Prev</button>
-            <p>{currentPage}</p>
-            <button onClick={nextHandler} >Next</button>
-        </div>
+            </div>
+            <div className='paginator_conteiner'>
+                <button onClick={prevHandler} >Prev</button>
+                <p>{currentPage}</p>
+                <button onClick={nextHandler} >Next</button>
+            </div>
         </div>  
     )
 }

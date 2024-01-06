@@ -57,7 +57,7 @@ const Form = ()=>{
     const handleActivity = (event)=>{
         const { id, value } = event.target
 
-        if(id === "name"){
+        if(id === "name" && activities.length){
             if(activities.find(activity => activity.name === value)){
                 return window.alert('Name in use')
             }

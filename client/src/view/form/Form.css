@@ -1,7 +1,7 @@
 .box_form{
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: left;
 }
 
 .form_conteiner{
@@ -17,10 +17,16 @@
     margin: 3px;
 }
 
+.activity_card{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
 .activity_conteiner{
     display: grid;
     grid-template-columns: repeat(2 , 1fr);
     padding: 6px;
+    margin: 3px;
     border: solid .5px whitesmoke;
     border-radius: 6px;
     max-width: 300px;

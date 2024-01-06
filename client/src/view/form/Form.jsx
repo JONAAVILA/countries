@@ -165,9 +165,9 @@ const Form = ()=>{
                 )
             })}
         </div>
-        <div>
+        <div className="" >
             {!activities.length? (<h1>Activities not found</h1>) : (
-                <div>
+                <div className="activity_card"  >
                     {activities.map(activity =>{
                         return(
                         <div className="activity_conteiner" key={activity.name}>

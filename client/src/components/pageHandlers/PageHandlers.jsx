@@ -23,11 +23,11 @@ export const PageHandlers = ()=>{
         }
     }
     return(
-        <div className='page_conteiner' >
+        <div>
             <div>
                 <SearchBar/>
             </div>
-            <div className='activity_conteiner' >
+            <div className='page_conteiner'>
             {state.slice(startIndex, endIndex).map(p =>{
                 return(
                     <div key={p.id} style={{ backgroundImage: `url(${p.flags})`,

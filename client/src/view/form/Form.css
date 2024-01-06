@@ -18,6 +18,21 @@
 }
 
 .activity_conteiner{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    padding: 6px;
+    border: solid .5px whitesmoke;
+    border-radius: 6px;
+    max-width: 300px;
+    min-height: 200px;
+    width: 300px;
+    height: 200px;
+}
+
+.activity_conteiner h2{
+    font-size: 1rem;
+}
+
+.activity_conteiner h3{
+    font-size: .8rem;
 }

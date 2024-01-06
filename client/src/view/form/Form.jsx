@@ -165,12 +165,12 @@ const Form = ()=>{
                 )
             })}
         </div>
-        <div className="activity_conteiner">
+        <div>
             {!activities.length? (<h1>Activities not found</h1>) : (
                 <div>
                     {activities.map(activity =>{
                         return(
-                        <div key={activity.name}>
+                        <div className="activity_conteiner" key={activity.name}>
                         <h2>Name Activity: {activity.name}</h2>
                         <h3>Difficulty: {activity.difficulty}</h3>
                         <h3>Duration: {activity.duration}</h3>

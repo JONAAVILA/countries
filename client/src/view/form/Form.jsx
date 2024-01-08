@@ -83,6 +83,8 @@ const Form = ()=>{
                 addedCountries
             }
 
+            if(!addedCountries.length) return window.alert("Add a country")
+
             const response = await axios.post("http://localhost:3001/countries/activities",activity)
             if(response === undefined) throw new Error({error: error.message})
             setAddedCountries([])

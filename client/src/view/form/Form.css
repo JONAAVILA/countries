@@ -42,3 +42,8 @@
 .activity_conteiner h3{
     font-size: .8rem;
 }
+
+.box_activity{
+    padding: 1rem;
+    width: 100%;
+}

@@ -167,7 +167,7 @@ const Form = ()=>{
                 )
             })}
         </div>
-        <div className="" >
+        <div className="box_activity" >
             {!activities.length? (<h1>Activities not found</h1>) : (
                 <div className="activity_card"  >
                     {activities.map(activity =>{

@@ -1,8 +1,10 @@
 .page_conteiner{
     display: grid;
     justify-content: center;
-    max-width: 100%;
+    max-width: 100vh;
+    max-height: 100%;
     grid-template-columns: repeat(4, 1fr);
+    position: relative;
 }
 
 @media screen and (max-width:768px){
@@ -22,11 +24,16 @@
 }
 
 .page_card{
-    border-radius: 4px;
+    border-radius: 1rem;
     padding: 5px;
     width: 320px;
     height: 200px;
     margin: 3px;
+    transition: transform 0.3s ease-in;
+}
+
+.page_card:hover {
+    transform: scale(1.02);
 }
 
 .paginator_conteiner{

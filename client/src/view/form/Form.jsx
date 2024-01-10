@@ -149,8 +149,9 @@ const Form = ()=>{
                         placeholder="Type a countrie and press Enter"
                         />  
             </div>
-            
-            <button type="submit">Create</button> 
+            <div className="button_conteiner" >
+              <button type="submit">Create</button> 
+            </div>
             </form>
             <div>
                 {errors.name && <p>{errors.name}</p>}

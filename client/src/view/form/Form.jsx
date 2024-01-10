@@ -83,6 +83,8 @@ const Form = ()=>{
                 addedCountries
             }
 
+            if(!addedCountries.length) return window.alert("Add a country")
+
             const response = await axios.post("http://localhost:3001/countries/activities",activity)
             if(response === undefined) throw new Error({error: error.message})
             setAddedCountries([])
@@ -147,8 +149,9 @@ const Form = ()=>{
                         placeholder="Type a countrie and press Enter"
                         />  
             </div>
-            
-            <button type="submit">Create</button> 
+            <div className="button_conteiner" >
+              <button type="submit">Create</button> 
+            </div>
             </form>
             <div>
                 {errors.name && <p>{errors.name}</p>}
@@ -165,7 +168,7 @@ const Form = ()=>{
                 )
             })}
         </div>
-        <div className="" >
+        <div className="box_activity" >
             {!activities.length? (<h1>Activities not found</h1>) : (
                 <div className="activity_card"  >
                     {activities.map(activity =>{

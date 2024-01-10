@@ -1,20 +1,38 @@
 .box_form{
-    display: flex;
     width: 100%;
-    justify-content: left;
+    justify-content: center;
 }
 
 .form_conteiner{
-    width: 300px;
-    justify-content: left;
+    display: flex;
+    justify-content: center;
+}
+
+.form_conteiner h1{
+    display: flex;
+    justify-content: center;
+}
+
+.button_conteiner{
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.button_conteiner button{
+    width: 200px;
 }
 
 .input_conteiner{
+    width: 500px;
     display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-content: center;
 }
 
-.input_conteiner input{
-    margin: 3px;
+.input_conteiner h1{
+    display: flex;
+    justify-content: center;
 }
 
 .activity_card{
@@ -29,10 +47,6 @@
     margin: 3px;
     border: solid .5px whitesmoke;
     border-radius: 6px;
-    max-width: 300px;
-    min-height: 200px;
-    width: 300px;
-    height: 200px;
 }
 
 .activity_conteiner h2{
@@ -41,4 +55,9 @@
 
 .activity_conteiner h3{
     font-size: .8rem;
+}
+
+.box_activity{
+    padding: 1rem;
+    width: 100%;
 }

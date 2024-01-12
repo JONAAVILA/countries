@@ -8,7 +8,7 @@ const Nav = ()=>{
     Location.pathname === "/home"
 
     return(
-        <div>
+        <div className='nav_conteiner'>
             <Link to="/form" >
                 <button>Create Activity</button>
             </Link>

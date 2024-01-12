@@ -9,7 +9,7 @@
   font-family: 'Poppins', sans-serif;
 
   color-scheme: light dark;
-  color: #171456;
+  color: #325658;
   background-color: #badfdc;
 }
 
@@ -28,22 +28,40 @@ body {
 }
 
 button {
+  margin-left: 3px;
+  margin-right: 3px;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #459591;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  background-color: #3c7d7e;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input {
+  background-color: transparent;
+  border: solid 2px #3c7d7e;
+  border-radius: 8px;
+  color: #3c7d7e;
+}
+
+select {
+  margin-left: 3px;
+  margin-right: 3px;
+  background-color: transparent;
+  border: solid 2px #3c7d7e;
+  border-radius: 8px;
+  color: #3c7d7e;
 }
 
 @media (prefers-color-scheme: light) {

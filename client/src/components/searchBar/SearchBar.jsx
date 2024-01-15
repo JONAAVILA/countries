@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { filterCountries, orderCountries, searchCountries } from "../../redux/Actions";
 import { useEffect, useState } from "react";
+import './SearchBar.css';
 
 const SearchBar = ()=>{
     const state = useSelector(state => state.countries)
@@ -41,7 +42,7 @@ const SearchBar = ()=>{
     },[dispatch])
 
     return(
-        <div className="nav_conteiner">
+        <div className="filter_conteiner">
             <select onChange={handleOrder} name="Orden" id="">
                 <option value={"Random"}>Random</option> 
                 <option value={"A"}>Ascendente</option>

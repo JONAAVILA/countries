@@ -32,6 +32,13 @@
     transition: transform 0.3s ease-in;
 }
 
+@media screen and (max-width:1366px){
+    .page_card{
+        width: 260px;
+        height: 130px;
+    }
+}
+
 .page_card:hover {
     transform: translateY(-3px);
 }
@@ -39,4 +46,8 @@
 .paginator_conteiner{
     display: flex;
     justify-content: center;
+}
+
+.box_page{
+    min-height: 95vh;
 }

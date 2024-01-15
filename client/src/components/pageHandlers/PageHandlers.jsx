@@ -23,7 +23,7 @@ export const PageHandlers = ()=>{
         }
     }
     return(
-        <div>
+        <div className='box_page' >
             <div>
                 <SearchBar/>
             </div>

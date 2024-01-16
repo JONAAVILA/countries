@@ -11,6 +11,7 @@
 .form_conteiner h1{
     display: flex;
     justify-content: center;
+    font-size: 3rem;
 }
 
 .button_conteiner{
@@ -35,17 +36,18 @@
     justify-content: center;
 }
 
-.activity_card{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+.input_conteiner input{
+    height: 2rem;
+    margin: 3px;
+    padding: 2px;
 }
 
 .activity_conteiner{
-    display: grid;
-    grid-template-columns: repeat(2 , 1fr);
+    display:flex;
     padding: 6px;
     margin: 3px;
-    border: solid .5px whitesmoke;
+    background-color: #3c7d7e;
+    color: aliceblue;
     border-radius: 6px;
 }
 
@@ -58,6 +60,15 @@
 }
 
 .box_activity{
+    display: flex;
+    justify-content: center;
     padding: 1rem;
     width: 100%;
 }
+
+.box_activity h1{
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+}
+

@@ -174,12 +174,17 @@ const Form = ()=>{
                     {activities.map(activity =>{
                         return(
                         <div className="activity_conteiner" key={activity.name}>
-                        <h2>Name: {activity.name}</h2>
                         <div>
-                            <h3>Difficulty: {activity.difficulty}</h3>
-                            <h3>Duration: {activity.duration}</h3>
-                            <h3>Season: {activity.season}</h3>
-                            <h2>Related Countries</h2>  
+                            <div>
+                                <h2>Name: {activity.name}</h2> 
+                            </div>
+                            <div>
+                                <h3>Difficulty: {activity.difficulty}</h3>
+                                <h3>Duration: {activity.duration}</h3>
+                                <h3>Season: {activity.season}</h3>
+                                <h2>Related Countries</h2>    
+                            </div>
+                            
                         </div>
                         
                         {activity.Countries.map(country =>{

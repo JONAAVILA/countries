@@ -153,20 +153,18 @@ const Form = ()=>{
               <button type="submit">Create</button> 
             </div>
             </form>
-            <div>
-                {errors.name && <p>{errors.name}</p>}
-                {errors.difficulty && <p>{errors.difficulty}</p>}
-                {errors.duration && <p>{errors.duration}</p>}
-                {errors.season && <p>{errors.season}</p>}
-            </div>
-            
-            
             {addedCountries.map(c => {
 
                 return(
                     <h3 key={c.id} >{c.name}</h3>
                 )
             })}
+        </div>
+        <div>
+                {errors.name && <p>{errors.name}</p>}
+                {errors.difficulty && <p>{errors.difficulty}</p>}
+                {errors.duration && <p>{errors.duration}</p>}
+                {errors.season && <p>{errors.season}</p>}
         </div>
         <div className="box_activity" >
             {!activities.length? (<h1>Activities not found</h1>) : (

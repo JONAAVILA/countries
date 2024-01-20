@@ -153,18 +153,21 @@ const Form = ()=>{
               <button type="submit">Create</button> 
             </div>
             </form>
-            {addedCountries.map(c => {
-
-                return(
-                    <h3 key={c.id} >{c.name}</h3>
-                )
-            })}
         </div>
         <div>
                 {errors.name && <p>{errors.name}</p>}
                 {errors.difficulty && <p>{errors.difficulty}</p>}
                 {errors.duration && <p>{errors.duration}</p>}
                 {errors.season && <p>{errors.season}</p>}
+        <div className="box_country"  >
+            {addedCountries.map(c => {
+                    return(
+                        <div>
+                            <h3 key={c.id} >{c.name}</h3>
+                        </div>
+                    )
+                })}
+        </div>  
         </div>
         <div className="box_activity" >
             {!activities.length? (<h1>Activities not found</h1>) : (
@@ -172,25 +175,24 @@ const Form = ()=>{
                     {activities.map(activity =>{
                         return(
                         <div className="activity_conteiner" key={activity.name}>
-                        <div>
                             <div>
-                                <h2>Name: {activity.name}</h2> 
+                                <div>
+                                    <h2>Name: {activity.name}</h2> 
+                                </div>
+                                <div>
+                                    <h3>Difficulty: {activity.difficulty}</h3>
+                                    <h3>Duration: {activity.duration}</h3>
+                                    <h3>Season: {activity.season}</h3>
+                                    <h2>Related Countries</h2>    
+                                </div> 
                             </div>
-                            <div>
-                                <h3>Difficulty: {activity.difficulty}</h3>
-                                <h3>Duration: {activity.duration}</h3>
-                                <h3>Season: {activity.season}</h3>
-                                <h2>Related Countries</h2>    
-                            </div>
-                            
-                        </div>
                         
-                        {activity.Countries.map(country =>{
-                            return(
+                            {activity.Countries.map(country =>{
+                                return(
                                 <div key={country.name}>
                                     <h3>{country.name}</h3>
                                 </div>
-                            )
+                                )
                             })} 
                         </div>
                         ) 

@@ -24,6 +24,22 @@
     width: 200px;
 }
 
+.box_country{
+    display: flex;
+}
+
+.box_country div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7rem;
+    height: 2.2rem;
+    margin: 3px;
+    padding: 3px;
+    border: solid 1px white;
+    border-radius: 5rem;
+}
+
 .input_conteiner{
     width: 500px;
     display: grid;

@@ -100,9 +100,13 @@ const Form = ()=>{
             return window.alert(response.data.message) 
         } catch (error) {
             return window.alert(error.message)
-        }
-        
-    }   
+        } 
+    } 
+    
+    const handleDeleteCountry = ()=>{
+        countries = addedCountries.slice(0,-1)
+        setAddedCountries(countrie)
+    }
 
     return(
     <div className="box_form" >
@@ -154,20 +158,34 @@ const Form = ()=>{
             </div>
             </form>
         </div>
-        <div>
-                {errors.name && <p>{errors.name}</p>}
-                {errors.difficulty && <p>{errors.difficulty}</p>}
+        <div className="conteiner_country"  >
+            <div>
+                {errors.name && <p>{errors.name}</p>}{errors.difficulty && <p>{errors.difficulty}</p>}
                 {errors.duration && <p>{errors.duration}</p>}
                 {errors.season && <p>{errors.season}</p>}
-        <div className="box_country"  >
-            {addedCountries.map(c => {
+            </div>
+            <div className="box_country"  >
+                {addedCountries.map(c => {
                     return(
                         <div>
                             <h3 key={c.id} >{c.name}</h3>
+                            <svg onClick={handleDeleteCountry}
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="20"
+                                 height="20"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                                 class="lucide lucide-x">
+                                <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                            </svg>
                         </div>
                     )
                 })}
-        </div>  
+            </div>  
         </div>
         <div className="box_activity" >
             {!activities.length? (<h1>Activities not found</h1>) : (

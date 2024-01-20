@@ -30,14 +30,44 @@
 
 .box_country div{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 7rem;
-    height: 2.2rem;
-    margin: 3px;
-    padding: 3px;
-    border: solid 1px white;
+    width: 8rem;
+    height: 1.8rem;
+    margin: 5px;
+    padding: 2px 4px 2px 5px;
+    border: solid 1px #3c7d7e;
     border-radius: 5rem;
+}
+
+.box_country svg{
+    color: #3c7d7e;
+    margin-left: 5px;
+    padding: 2px;
+    border-radius: 50%;
+    transition: ease-in 0.3s    ;
+}
+
+.box_country svg:hover{
+    transform: rotate(30deg);
+}
+
+.conteiner_country{
+    min-height: 3rem;
+    width: 100%;
+}
+
+.conteiner_country div{
+    display: flex;
+}
+
+.conteiner_country p{
+    border: solid 2px #e0b3b3;
+    color: #d49191;
+    height: 1.5rem;
+    margin: 3px;
+    padding: 2px 6px;
+    border-radius: 1rem;
 }
 
 .input_conteiner{
@@ -76,6 +106,8 @@
 }
 
 .box_activity{
+    border: solid 2px #3c7d7e;
+    border-radius: 1rem;
     display: flex;
     justify-content: center;
     padding: 1rem;
@@ -86,5 +118,6 @@
     display: flex;
     justify-content: center;
     font-size: 5rem;
+    opacity: 0.5;
 }
 

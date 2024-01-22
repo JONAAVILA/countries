@@ -35,7 +35,7 @@
     width: 8rem;
     height: 1.8rem;
     margin: 5px;
-    padding: 2px 4px 2px 5px;
+    padding: 2px 4px 2px 10px;
     border: solid 1px #3c7d7e;
     border-radius: 5rem;
 }
@@ -46,6 +46,10 @@
     padding: 2px;
     border-radius: 50%;
     transition: ease-in 0.3s    ;
+}
+
+.box_country path{
+    pointer-events: none;
 }
 
 .box_country svg:hover{

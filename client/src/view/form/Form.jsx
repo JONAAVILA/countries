@@ -103,9 +103,15 @@ const Form = ()=>{
         } 
     } 
     
-    const handleDeleteCountry = ()=>{
-        countries = addedCountries.slice(0,-1)
-        setAddedCountries(countrie)
+    const handleDeleteCountry = (event)=>{
+        const {id} = event.target
+
+        if(id){
+            const countries = addedCountries.filter(country => country.id !== id)
+            console.log(countries)
+            setAddedCountries(countries)
+            return
+        }
     }
 
     return(
@@ -167,19 +173,18 @@ const Form = ()=>{
             <div className="box_country"  >
                 {addedCountries.map(c => {
                     return(
-                        <div>
+                        <div key={c.id} >
                             <h3 key={c.id} >{c.name}</h3>
-                            <svg onClick={handleDeleteCountry}
+                            <svg key={c.name} id={c.id} onClick={handleDeleteCountry}
                                  xmlns="http://www.w3.org/2000/svg"
                                  width="20"
                                  height="20"
                                  viewBox="0 0 24 24"
                                  fill="none"
                                  stroke="currentColor"
-                                 stroke-width="2"
-                                 stroke-linecap="round"
-                                 stroke-linejoin="round"
-                                 class="lucide lucide-x">
+                                 strokeWidth="2"
+                                 strokeLinecap="round"
+                                 strokeLinejoin="round">
                                 <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
                             </svg>
                         </div>

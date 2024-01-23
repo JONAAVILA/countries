@@ -92,30 +92,44 @@
     padding: 2px;
 }
 
-.activity_conteiner{
+.activity_detail{
     display:flex;
     padding: 6px;
     margin: 3px;
-    background-color: #3c7d7e;
-    color: aliceblue;
     border-radius: 6px;
 }
 
-.activity_conteiner h2{
-    font-size: 1rem;
-}
-
-.activity_conteiner h3{
+.activity_detail h3{
     font-size: .8rem;
 }
 
+.activity_card{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.activity_card h2{
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+}
+
+.activity_conteiner{
+    border: solid 1px #3c7d7e;
+    border-radius: 1rem;
+    margin: 3px;
+    height: 200px;
+    width: 300px;
+}
+
 .box_activity{
+    display: grid;
     border: solid 2px #3c7d7e;
     border-radius: 1rem;
     display: flex;
     justify-content: center;
     padding: 1rem;
-    width: 100%;
+    min-width: 100vh;
 }
 
 .box_activity h1{

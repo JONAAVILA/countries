@@ -197,26 +197,29 @@ const Form = ()=>{
                 <div className="activity_card"  >
                     {activities.map(activity =>{
                         return(
-                        <div className="activity_conteiner" key={activity.name}>
+                        <div className="activity_conteiner" >
                             <div>
-                                <div>
-                                    <h2>Name: {activity.name}</h2> 
-                                </div>
-                                <div>
-                                    <h3>Difficulty: {activity.difficulty}</h3>
-                                    <h3>Duration: {activity.duration}</h3>
-                                    <h3>Season: {activity.season}</h3>
-                                    <h2>Related Countries</h2>    
-                                </div> 
+                                <h2>Name: {activity.name}</h2>    
                             </div>
-                        
-                            {activity.Countries.map(country =>{
-                                return(
-                                <div key={country.name}>
-                                    <h3>{country.name}</h3>
+                            <div className="activity_detail" key={activity.name}>
+                                <div>
+                                    <div>
+                                        <h3>Difficulty: {activity.difficulty}</h3>
+                                        <h3>Duration: {activity.duration}</h3>
+                                        <h3>Season: {activity.season}</h3>
+                                    </div> 
                                 </div>
-                                )
-                            })} 
+                                <div>
+                                    <h2>Related Countries</h2>  
+                                    {activity.Countries.map(country =>{
+                                    return(
+                                        <div key={country.name}>
+                                            <h3>{country.name}</h3>
+                                        </div>
+                                        )
+                                    })} 
+                                </div>   
+                            </div> 
                         </div>
                         ) 
                     })}

@@ -13,10 +13,6 @@
 
 .page_card{
     border-radius: 1rem;
-    padding: 5px;
-    width: 320px;
-    height: 200px;
-    margin: 3px;
     transition: transform 0.3s ease-in;
 }
 
@@ -38,12 +34,6 @@
     min-height: 95vh;
 }
 
-@media screen and (max-width:1366px){
-    .page_card{
-        width: 260px;
-        height: 130px;
-    }
-}
 
 @media screen and (max-width:768px){
     .page_conteiner{

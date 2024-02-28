@@ -1,8 +1,7 @@
 .page_conteiner{
     display: grid;
     justify-content: center;
-    max-width: 100vh;
-    max-height: 100%;
+    min-width: 100vh;
     grid-template-columns: repeat(4, 1fr);
     position: relative;
 }
@@ -12,6 +11,8 @@
 }
 
 .page_card{
+    width: 280px;
+    height: 160px;
     border-radius: 1rem;
     transition: transform 0.3s ease-in;
 }
@@ -44,6 +45,10 @@
 @media screen and (max-width:480px){
     .page_conteiner{
         grid-template-columns: 1fr;
-        justify-content: center;
+        width: auto;
+    }  
+    .page_card{
+        width: 480px;
+        height: 220px;
     }
 }

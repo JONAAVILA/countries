@@ -6,7 +6,7 @@ import SearchBar from '../searchBar/SearchBar';
 
 export const PageHandlers = ()=>{
     const [ currentPage, setCurrentPage ] = useState(1);
-    const itemsPerPage = 10;
+    const itemsPerPage = 12;
     const state = useSelector(state => state.countriesFiltered)
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -30,15 +30,20 @@ export const PageHandlers = ()=>{
             <div className='page_conteiner'>
             {state.slice(startIndex, endIndex).map(p =>{
                 return(
-                    <div key={p.id} style={{ backgroundImage: `url(${p.flags})`,
-                                             backgroundSize: 'cover',
-                                             backgroundPosition: 'center',    
-                                        }} className='page_card'>
-                    <Link to={`/detail/${p.id}`} >
-                        <h1>{p.name}</h1>
-                    </Link>
-                       <h2>{p.continents}</h2>
-                    </div> 
+                    <div>
+                        <div key={p.id} style={{ backgroundImage: `url(${p.flags})`,
+                                                 backgroundSize: 'cover',
+                                                 backgroundPosition: 'center',    
+                                            }} className='page_card'>
+                        </div>
+                        <div className='page_tittle' >
+                            <Link to={`/detail/${p.id}`} >
+                                <h1>{p.name}</h1>
+                            </Link>
+                                <h2>{p.continents}</h2>
+                        </div> 
+                    </div>
+                    
                 )
             })}
             

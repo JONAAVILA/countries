@@ -17,7 +17,11 @@
     transition: transform 0.3s ease-in;
 }
 
-.page_card:hover {
+.box_card{
+    transition: transform 0.3s ease-in;
+}
+
+.box_card:hover {
     transform: translateY(-3px);
 }
 

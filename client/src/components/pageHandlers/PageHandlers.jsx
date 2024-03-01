@@ -30,7 +30,7 @@ export const PageHandlers = ()=>{
             <div className='page_conteiner'>
             {state.slice(startIndex, endIndex).map(p =>{
                 return(
-                    <div>
+                    <div className='box_card' >
                         <div key={p.id} style={{ backgroundImage: `url(${p.flags})`,
                                                  backgroundSize: 'cover',
                                                  backgroundPosition: 'center',    

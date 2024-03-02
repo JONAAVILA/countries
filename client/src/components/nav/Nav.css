@@ -1,7 +1,18 @@
 .nav_conteiner{
-    position: absolute;
-    left: 0;
-    right: 0;
+    margin-top: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 97vw;
+}
+
+.nav_buttons{
+    display: flex;
+    align-items: center;
+}
+
+.nav_buttons button {
+    margin: 3px;
+    border-radius: 100%;
+    width: 3.5rem;
+    height: 3.5rem;
 }

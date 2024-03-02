@@ -9,12 +9,19 @@ const Nav = ()=>{
 
     return(
         <div className='nav_conteiner'>
-            <Link to="/form" >
-                <button>Create Activity</button>
-            </Link>
-            <Link to="/home" >
-                <button>Home</button>
-            </Link>
+            <div>
+                <h2>Countries app create in React and Redux</h2>
+                <p>With Countries app you can search
+                   any country in the word, easy and faster</p>
+            </div>
+            <div className='nav_buttons' >
+                <Link to="/form" >
+                    <button>Activity</button>
+                </Link>
+                <Link to="/home" >
+                    <button>Home</button>
+                </Link>
+            </div>
         </div>
     )
 }

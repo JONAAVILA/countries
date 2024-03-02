@@ -51,18 +51,18 @@ button:focus-visible {
 
 input {
   background-color: transparent;
-  border: solid 2px #3c7d7e;
+  border: solid 1px #d4d4d4;
   border-radius: 8px;
-  color: #3c7d7e;
+  color: #d4d4d4;
 }
 
 select {
   margin-left: 3px;
   margin-right: 3px;
   background-color: transparent;
-  border: solid 2px #3c7d7e;
+  border: solid 1px #d4d4d4;
   border-radius: 8px;
-  color: #3c7d7e;
+  color: #d4d4d4;
 }
 
 @media (prefers-color-scheme: light) {

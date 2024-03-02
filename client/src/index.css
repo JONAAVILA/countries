@@ -8,7 +8,7 @@
   font-family: 'Poppins', sans-serif;
   color-scheme: light dark;
   color: #d4d4d4;
-  background-color: #24314e;
+  background-color: #222222;
 }
 
 a {
@@ -28,20 +28,21 @@ body {
 
 
 button {
-  margin-left: 3px;
-  margin-right: 3px;
+  width: 7.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+  border: 1px solid #d4d4d4;
   font-weight: 500;
   font-family: inherit;
-  background-color: #3c7d7e;
+  background-color: transparent;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  background-color: #3c7d7e;
+  background-color: #bdbdbd25;
 }
 button:focus,
 button:focus-visible {

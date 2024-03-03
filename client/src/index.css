@@ -28,6 +28,7 @@ body {
 
 
 button {
+  margin: 3px;
   width: 7.5rem;
   height: 2.5rem;
   display: flex;
@@ -50,6 +51,7 @@ button:focus-visible {
 }
 
 input {
+  margin: 3px;
   background-color: transparent;
   border: solid 1px #d4d4d4;
   border-radius: 8px;
@@ -57,12 +59,15 @@ input {
 }
 
 select {
-  margin-left: 3px;
-  margin-right: 3px;
+  margin: 3px;
   background-color: transparent;
   border: solid 1px #d4d4d4;
   border-radius: 8px;
   color: #d4d4d4;
+}
+
+option{
+  background-color: transparent;
 }
 
 @media (prefers-color-scheme: light) {

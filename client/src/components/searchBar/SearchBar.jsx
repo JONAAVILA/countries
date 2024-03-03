@@ -49,7 +49,7 @@ const SearchBar = ()=>{
                 <option value={"B"}>Descendente</option>
             </select>
             <select onChange={handleFilter} id="">
-                <option value={"all"}>All countries</option>
+                <option className="option_select" value={"all"}>All countries</option>
                 <option value={'South America'}>South America</option>
                 <option value={'North America'}>North America</option>
                 <option value={'Africa'}>Africa</option>

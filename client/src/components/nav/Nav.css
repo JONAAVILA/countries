@@ -5,6 +5,11 @@
     width: 97vw;
 }
 
+.nav_conteiner h2,p {
+    margin: 0;
+}
+
+
 .nav_buttons{
     display: flex;
     align-items: center;

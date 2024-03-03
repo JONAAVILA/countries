@@ -4,3 +4,7 @@
     justify-content: center;
     position: relative;
 }
+
+.filter_conteiner input,button,select{
+    margin: 3px;
+}

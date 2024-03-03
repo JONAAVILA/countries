@@ -2,7 +2,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 98vw;
     grid-template-columns: repeat(4, 22vw);
     position: relative;
     margin-bottom: 1rem;
@@ -27,8 +27,17 @@
 }
 
 .paginator_conteiner{
+    margin: 0 0 .5rem 0;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.paginator_conteiner p{
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
 }
 
 .box_page{

@@ -33,6 +33,7 @@ export const PageHandlers = ()=>{
                     <div className='box_card' >
                         <div key={p.id} style={{ backgroundImage: `url(${p.flags})`,
                                                  backgroundSize: 'cover',
+                                                 backgroundRepeat: 'no-repeat',
                                                  backgroundPosition: 'center',    
                                             }} className='page_card'>
                         </div>

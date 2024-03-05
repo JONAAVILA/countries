@@ -31,16 +31,16 @@ export const PageHandlers = ()=>{
             {state.slice(startIndex, endIndex).map(p =>{
                 return(
                     <div className='box_card' >
+                        <Link to={`/detail/${p.id}`} >
                         <div key={p.id} style={{ backgroundImage: `url(${p.flags})`,
                                                  backgroundSize: 'cover',
                                                  backgroundRepeat: 'no-repeat',
                                                  backgroundPosition: 'center',    
                                             }} className='page_card'>
                         </div>
+                        </Link>
                         <div className='page_tittle' >
-                            <Link to={`/detail/${p.id}`} >
                                 <h1>{p.name}</h1>
-                            </Link>
                                 <h2>{p.continents}</h2>
                         </div> 
                     </div>

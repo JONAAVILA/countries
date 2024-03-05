@@ -53,10 +53,11 @@
 }
 
 .page_tittle h1 {
+    color: #626772;
     margin: 0;
     display: flex;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: .7rem;
 }
 
 .page_tittle h2{
@@ -64,7 +65,7 @@
     margin: 0;
     display: flex;
     justify-content: center;
-    font-size: .9rem;
+    font-size: .8rem;
 }
 
 

@@ -67,7 +67,7 @@ select {
 }
 
 option{
-  background-color: transparent;
+  background-color: #313131;
 }
 
 @media (prefers-color-scheme: light) {

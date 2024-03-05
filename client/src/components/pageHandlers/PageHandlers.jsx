@@ -12,7 +12,7 @@ export const PageHandlers = ()=>{
     const endIndex = startIndex + itemsPerPage;
 
     const nextHandler = (event)=>{
-        if(event){
+        if(event && currentPage < 21){
             setCurrentPage(currentPage + 1)
         }
     }

@@ -13,10 +13,3 @@
     display: flex;
     align-items: center;
 }
-
-.nav_buttons button {
-    margin: 3px;
-    border-radius: 100%;
-    width: 3.5rem;
-    height: 3.5rem;
-}

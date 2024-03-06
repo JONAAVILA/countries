@@ -1,7 +1,6 @@
 .app_conteiner{
   display: flex;
   justify-content: center;
-  width: 10vh;
 }
 
 .logo {

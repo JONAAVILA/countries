@@ -1,6 +1,6 @@
 .box_form{
     width: 98vw;
-    height: 100vh;
+    min-height: 90vh;
     justify-content: center;
 }
 

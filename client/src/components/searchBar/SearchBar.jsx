@@ -3,7 +3,7 @@ import { filterCountries, orderCountries, searchCountries } from "../../redux/Ac
 import { useEffect, useState } from "react";
 import './SearchBar.css';
 
-const SearchBar = ()=>{
+const SearchBar = ({onSearch})=>{
     const state = useSelector(state => state.countries)
     const [ searchInputValue, setSearchInputValue ] = useState("")
     const dispatch = useDispatch()
@@ -24,6 +24,7 @@ const SearchBar = ()=>{
 
     const handleSearch = ()=>{
         const value = searchInputValue[0].toUpperCase() + searchInputValue.toLowerCase().slice(1)
+        onSearch()
         if(!state.find(c => c.name === value)){
             window.alert("Invalid name")
             return setSearchInputValue("")

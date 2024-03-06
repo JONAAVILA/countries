@@ -12,7 +12,7 @@ export const PageHandlers = ()=>{
     const endIndex = startIndex + itemsPerPage;
 
     const nextHandler = (event)=>{
-        if(event && currentPage < 21){
+        if(event && currentPage < 21 && state.length > 1){
             setCurrentPage(currentPage + 1)
         }
     }
@@ -22,10 +22,15 @@ export const PageHandlers = ()=>{
             setCurrentPage(currentPage - 1)
         }
     }
+
+    const handleSearch = ()=>{
+        setCurrentPage(1)
+    }
+
     return(
         <div className='box_page' >
             <div>
-                <SearchBar/>
+                <SearchBar onSearch={handleSearch} />
             </div>
             <div className='page_conteiner'>
             {state.slice(startIndex, endIndex).map(p =>{

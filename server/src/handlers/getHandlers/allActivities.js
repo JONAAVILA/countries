@@ -3,12 +3,7 @@ const { Activity, Country } = require('../../db.js');
 const allActivities = async ()=>{
     try {
         const activities = await Activity.findAll({
-            include: [{
-              model: Country,
-              through: {
-                attributes: [],
-              },
-            }],
+            include: [Country],
           })
     
         if(!activities.length) throw new Error("Activities not found")

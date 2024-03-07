@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import axios from "axios";
-import { allActivities } from "../../redux/Actions";
+import { allActivities, allCountries } from "../../redux/Actions";
 import validate from "./validate";
 import './Form.css';
 
@@ -23,6 +23,7 @@ const Form = ()=>{
 
     useEffect(()=>{
         dispatch(allActivities())
+        dispatch(allCountries())
     },[addedCountries])
 
     const handleInput = (event)=>{

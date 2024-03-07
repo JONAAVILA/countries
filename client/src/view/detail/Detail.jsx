@@ -4,10 +4,8 @@ import { useSelector } from "react-redux";
 const Detail = ()=>{
 
     const countries = useSelector(state => state.countries)
-    const activities = useSelector(state => state.activities)
     const { id } = useParams();
     console.log(countries)
-    console.log(activities)
     const matchCountrie = countries.find(c => c.id === id)
 
     return(
@@ -27,8 +25,12 @@ const Detail = ()=>{
                 <h3>Area: {matchCountrie.area}</h3>                     
                 <h3>Population: {matchCountrie.population}</h3>                     
                 <div>
-                    {activities.map(act => {
-                        const country = act.Countries.map(c => c)
+                    {matchCountrie.Activities.map(act => {
+                        return(
+                            <div>
+                                <h3>{act.name}</h3>
+                            </div>
+                        )
                     })}
                 </div>                  
             </div>  

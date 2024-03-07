@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
-import { allCountries } from "../../redux/Actions";
 import { useSelector } from "react-redux";
 
 const Detail = ()=>{
 
     const countries = useSelector(state => state.countries)
+    const activities = useSelector(state => state.activities)
     const { id } = useParams();
-    
+    console.log(countries)
+    console.log(activities)
     const matchCountrie = countries.find(c => c.id === id)
 
     return(
@@ -25,7 +26,11 @@ const Detail = ()=>{
                 <h2>{matchCountrie.subregion}</h2>
                 <h3>Area: {matchCountrie.area}</h3>                     
                 <h3>Population: {matchCountrie.population}</h3>                     
-                <h3>Activities: {matchCountrie.Activities}</h3>                     
+                <div>
+                    {activities.map(act => {
+                        const country = act.Countries.map(c => c)
+                    })}
+                </div>                  
             </div>  
         </div>
         

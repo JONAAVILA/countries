@@ -1,12 +1,7 @@
 import './Nav.css';
-import { useLocation, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Nav = ()=>{
-
-    const Location = useLocation()
-    Location.pathname === "/form"
-    Location.pathname === "/home"
-
     return(
         <div className='nav_conteiner'>
             <div>

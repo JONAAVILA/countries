@@ -21,15 +21,19 @@ function App() {
         dispatch(allActivities())
   }, [])
 
+
+  console.log(location.pathname)
+
   return (
     <div>
-        {(location.pathname === '*' || location.pathname !== '/landing') ?( <Nav /> ):(null)}
+        {location.pathname != '/' || location.pathname != '' ? <Nav /> : null}
       <Routes>
-        <Route path='/landing' element={<Landing/>} />
+        <Route path='/' element={<Landing/>} />
         <Route path='/home' element={<Home/>} />
         <Route path='/search' element={<SearchBar/>} />
         <Route path='/detail/:id' element={<Detail/>} />
         <Route path='/form' element={<Form/>} />
+        <Route path='*' element={<Error/>} />
       </Routes>
     </div>
   )

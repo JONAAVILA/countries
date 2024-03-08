@@ -1,0 +1,8 @@
+.box_detail{
+    width: 98vh;
+    height: 72vh;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+

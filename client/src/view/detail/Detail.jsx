@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import './Detail.css';
 
 const Detail = ()=>{
 
@@ -9,14 +10,13 @@ const Detail = ()=>{
     const matchCountrie = countries.find(c => c.id === id)
 
     return(
-        <div>
-            <div  key={matchCountrie.id} style={{ backgroundImage: `url(${matchCountrie.flags})`,
+        <div className="box_detail">
+            <div key={matchCountrie.id} style={{ backgroundImage: `url(${matchCountrie.flags})`,
                                              backgroundSize: 'cover',
                                              backgroundPosition: 'center',    
-                                        }} className='page_card'>
-                
+                                        }} className='card_detail'>
             </div>
-            <div>
+            <div className="card_info" >
                 <h2>{matchCountrie.id}</h2>
                 <h1>{matchCountrie.name}</h1> 
                 <h2>{matchCountrie.continents}</h2>

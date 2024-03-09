@@ -121,7 +121,7 @@
     border-radius: 1rem;
     margin: 3px;
     height: 200px;
-    width: 300px;
+    width: 350px;
 }
 
 .box_activity{
@@ -141,10 +141,24 @@
 }
 
 .box_activity_countries{
+    width: 50%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
     background-color: #cccccc2a;
     border-radius: 5px;
     border: solid 1px;
     padding: 5px;
+}
+
+.box_countries_activity{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.box_countries_activity h3{
+    margin: 0;
 }
 
 .box_activity_info{

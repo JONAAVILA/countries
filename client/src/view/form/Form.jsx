@@ -282,13 +282,17 @@ const Form = ()=>{
                                 </div>
                                 <div className="box_activity_countries" >
                                     <h3>Related Countries:</h3>  
-                                    {activity.Countries.map(country =>{
+                                    <div className="box_countries_activity" >
+                                        {activity.Countries.map(country =>{
                                     return(
-                                        <div key={country.name}>
+                                        <div>
                                             <h3>{country.name}</h3>
                                         </div>
+                                        
                                         )
-                                    })} 
+                                    })}
+                                    </div>
+                                     
                                 </div>   
                             </div> 
                         </div>

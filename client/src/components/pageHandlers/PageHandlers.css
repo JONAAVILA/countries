@@ -41,7 +41,7 @@
 }
 
 .box_page{
-    height: 70vh;
+    min-height: 87vh;
 }
 
 .page_tittle{

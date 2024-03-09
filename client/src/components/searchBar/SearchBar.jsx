@@ -9,11 +9,13 @@ const SearchBar = ({onSearch})=>{
     const dispatch = useDispatch()
 
     const handleFilter = (event)=>{
+        onSearch()
         const selectedContinent = event.target.value
         dispatch(filterCountries(selectedContinent)) 
     }
 
     const handleOrder = (event)=>{
+        onSearch()
         const selectOrder = event.target.value
         dispatch(orderCountries(selectOrder))
     }
@@ -34,6 +36,7 @@ const SearchBar = ({onSearch})=>{
     }
 
     const handleReload = ()=>{
+        onSearch()
         const defaultContinent = 'all'
         dispatch(filterCountries(defaultContinent))
     }

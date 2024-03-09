@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div>
-        {location.pathname != '/' || location.pathname != '' ? <Nav /> : null}
+        {location.pathname != '/' && location.pathname != '*' ? <Nav /> : null}
       <Routes>
         <Route path='/' element={<Landing/>} />
         <Route path='/home' element={<Home/>} />

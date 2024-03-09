@@ -1,10 +1,10 @@
 export default function validate (inputs){
     const errors = {}
 
-    const regexNameActivity = /^[a-zA-Z0-9 ]+$/;
+    const regexNameActivity = /^[a-zA-Z0-9 ]{1,15}$/;
     const validateNameActivity = regexNameActivity.test(inputs.name)
     if(inputs.name && !validateNameActivity){
-        errors['name'] = "Enter a valid name"
+        errors['name'] = "Enter a valid name or Too long"
     }else{
         errors['name'] = ""
     }

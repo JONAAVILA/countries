@@ -19,12 +19,13 @@ const Detail = ()=>{
             <div className="card_info" >
                 <h2>{matchCountrie.id}</h2>
                 <h1>{matchCountrie.name}</h1> 
-                <h2>{matchCountrie.continents}</h2>
-                <h2>{matchCountrie.capital}</h2>
-                <h2>{matchCountrie.subregion}</h2>
-                <h3>Area: {matchCountrie.area}</h3>                     
+                <h2>Continents: {matchCountrie.continents}</h2>
+                <h2>Capital: {matchCountrie.capital}</h2>
+                <h2>Subregion: {matchCountrie.subregion}</h2>
+                <h3>Area: {matchCountrie.area} m2</h3>                     
                 <h3>Population: {matchCountrie.population}</h3>                     
-                <div>
+                <h3>Activities:</h3>
+                <div className="card_activity">
                     {matchCountrie.Activities.map(act => {
                         return(
                             <div>

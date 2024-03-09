@@ -67,7 +67,7 @@
 }
 
 .conteiner_country p{
-    border: solid 2px #e0b3b3;
+    border: solid 2px #cccccc;
     color: #d49191;
     height: 1.5rem;
     margin: 3px;
@@ -95,6 +95,7 @@
 
 .activity_detail{
     display:flex;
+    justify-content: center;
     padding: 6px;
     margin: 3px;
     border-radius: 6px;
@@ -116,7 +117,7 @@
 }
 
 .activity_conteiner{
-    border: solid 1px #3c7d7e;
+    border: solid 1px;
     border-radius: 1rem;
     margin: 3px;
     height: 200px;
@@ -124,8 +125,9 @@
 }
 
 .box_activity{
+    padding: 1rem;
     display: grid;
-    border: solid 2px #3c7d7e;
+    border: solid 1px;
     border-radius: 1rem;
     justify-content: center;
     margin: 1rem;
@@ -138,3 +140,22 @@
     opacity: 0.1;
 }
 
+.box_activity_countries{
+    background-color: #cccccc2a;
+    border-radius: 5px;
+    border: solid 1px;
+    padding: 5px;
+}
+
+.box_activity_info{
+    padding-right: 5px;
+}
+
+.box_activity_info h3{
+    display: flex;
+    align-items: center;
+}
+
+.box_activity_info svg{
+    padding-left: 3px;
+}

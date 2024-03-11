@@ -12,9 +12,10 @@ export const PageHandlers = ()=>{
     const endIndex = startIndex + itemsPerPage;
 
     //corregir paginado
+    console.log(endIndex)
+    const nextHandler = ()=>{
+        if(currentPage < 21 && state.length/itemsPerPage > 1 && currentPage < Math.ceil(state.length/itemsPerPage)){
 
-    const nextHandler = (event)=>{
-        if(event && currentPage < 21 && state.length > 1){
             setCurrentPage(currentPage + 1)
         }
         console.log(state)

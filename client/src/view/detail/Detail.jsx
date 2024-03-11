@@ -6,7 +6,6 @@ const Detail = ()=>{
 
     const countries = useSelector(state => state.countries)
     const { id } = useParams();
-    console.log(countries)
     const matchCountrie = countries.find(c => c.id === id)
 
     return(

@@ -21,9 +21,6 @@ function App() {
         dispatch(allActivities())
   }, [])
 
-
-  console.log(location.pathname)
-
   return (
     <div>
         {location.pathname != '/' && location.pathname != '*' ? <Nav /> : null}
